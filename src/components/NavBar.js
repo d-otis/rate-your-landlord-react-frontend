@@ -1,4 +1,5 @@
 import React from 'react';
+import Landlords from '../containers/Landlords'
 import {
   BrowserRouter as Router,
   Switch,
@@ -29,7 +30,7 @@ function NavBar() {
           Home!
         </Route>
         <Route exact path="/landlords">
-          Landlords
+          <Landlords />
         </Route>
         <Route exact path="/properties">
           Properties
