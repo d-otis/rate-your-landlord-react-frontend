@@ -1,10 +1,40 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchLandlords } from '../actions/landlordActions'
+import Landlord from '../components/Landlord'
 
-function Landlords() {
+class Landlords extends Component {
 
-  return (
-    <h1>Landlords Index</h1>
-  )
+  componentDidMount() {
+    this.props.fetchLandlords()
+  }
+
+
+  render() {
+
+    // const landlords = this.props.data
+    // debugger
+
+    return (
+      <div>
+        <h1>Landlords Index</h1>
+        {/* landlords.map(ll => <Landlord key={ll.id} {...ll} />) */}
+      </div>
+      
+    )
+  }
 }
 
-export default Landlords
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchLandlords: () => dispatch(fetchLandlords())
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    landlords: state.landlords
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Landlords)
