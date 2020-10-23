@@ -1,15 +1,10 @@
-import React from 'react';
-import Landlords from '../containers/Landlords'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
-function NavBar() {
-  return (
-    <Router>
+class NavBar extends Component {
+
+  render() {
+    return (
       <div>
         <ul>
           <li>
@@ -23,21 +18,8 @@ function NavBar() {
           </li>
         </ul>
       </div>
-
-
-      <Switch>
-        <Route exact path="/">
-          Home!
-        </Route>
-        <Route exact path="/landlords">
-          <Landlords />
-        </Route>
-        <Route exact path="/properties">
-          Properties
-        </Route>
-      </Switch>
-    </Router>
-  )
+    )
+  }
 }
 
 export default NavBar;
