@@ -8,7 +8,18 @@ import { fetchProperties } from './actions/properties.actions'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Landlords from './containers/Landlords'
 
-function App() {
+class App extends Component {
+
+  componentDidMount() {
+      this.fetchAll()
+    }
+
+    fetchAll = () => {
+      this.props.fetchLandlords()
+      this.props.fetchProperties()
+    }
+
+render() {
   return (
     <Router>
       <NavBar />
@@ -24,4 +35,4 @@ const mapStateToProps = state => {
   return state
 }
 
-export default App;
+export default connect(mapStateToProps, { fetchLandlords, fetchProperties })(App);
