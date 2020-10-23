@@ -2,20 +2,17 @@ import React from 'react'
 
 function Landlord(props) {
 
-  const { id } = props
-  const { aggregate_rating: rating, name } = props.attributes
-  const { properties: allProperties, reviews } = props.relationships
-  // debugger
-  // const properties = allProperties.filter(p => p)
+  const { id, name, properties, reviews } = props
 
   return (
     <div>
       <h2>{name}</h2>
-      <h3>Rating: {rating}</h3>
+      <h3>Rating: XXX</h3>
+      <h3>Properties:</h3>
       <ol>
-        {allProperties.data.map((property, idx) => <li key={property.id}>Property ID : {property.id}</li>)}
+        {properties.map((property, idx) => <li key={property.id}>Property ID : {property.id}</li>)}
       </ol>
-      
+      <hr />
     </div>
   )
 }
