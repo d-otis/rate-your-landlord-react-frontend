@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import './App.css';
 import NavBar from './components/NavBar'
 import { connect } from 'react-redux'
-import { fetchLandlords } from './actions/landlordActions'
+import { fetchLandlords } from './actions/landlords.actions'
 import { fetchProperties } from './actions/properties.actions'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Landlords from './containers/Landlords'

@@ -1,6 +1,6 @@
 // rootReducer.js
-import landlordsReducer from './landlordsReducer'
-import propertiesReducer from './propertiesReducer'
+import landlordsReducer from './landlords.reducer'
+import propertiesReducer from './properties.reducer'
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({

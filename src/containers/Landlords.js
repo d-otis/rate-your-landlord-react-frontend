@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchLandlords } from '../actions/landlordActions'
 import Landlord from '../components/Landlord'
 
 class Landlords extends Component {
