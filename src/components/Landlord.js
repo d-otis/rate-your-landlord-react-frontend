@@ -5,7 +5,7 @@ function Landlord(props) {
   const { id, name, properties, reviews, rating } = props
 
   return (
-    <div>
+    <div key={id}>
       <h2>{name}</h2>
       <h3>Rating: {rating}</h3>
       <h3>Properties:</h3>
