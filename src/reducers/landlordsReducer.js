@@ -8,13 +8,14 @@ export default function landlordsReducer(
       return state
     case 'SET_LANDLORDS':
       const landlords = action.payload.data
-
+      
       return landlords.map(landlord => {
         return ({
                   id: landlord.id, 
                   name: landlord.attributes.name, 
                   reviews: landlord.relationships.reviews.data, 
-                  properties: landlord.relationships.properties.data
+                  properties: landlord.relationships.properties.data,
+                  rating: landlord.attributes.aggregate_rating
                 })
       })
     default:
