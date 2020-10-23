@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import Landlord from '../components/Landlord'
 
 class Landlords extends Component {
-
-  componentDidMount() {
-    this.props.fetchLandlords()
-  }
-
 
   render() {
 
@@ -24,16 +18,4 @@ class Landlords extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchLandlords: () => dispatch(fetchLandlords())
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    landlords: state.landlords
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Landlords)
+export default Landlords
