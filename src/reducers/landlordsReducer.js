@@ -11,12 +11,12 @@ export default function landlordsReducer(
       
       return landlords.map(landlord => {
         return ({
-                  id: landlord.id, 
-                  name: landlord.attributes.name, 
-                  reviews: landlord.relationships.reviews.data, 
-                  properties: landlord.relationships.properties.data,
-                  rating: landlord.attributes.aggregate_rating
-                })
+          id: landlord.id, 
+          name: landlord.attributes.name, 
+          reviews: landlord.relationships.reviews.data, 
+          properties: landlord.relationships.properties.data,
+          rating: landlord.attributes.aggregate_rating
+        })
       })
     default:
       return state
