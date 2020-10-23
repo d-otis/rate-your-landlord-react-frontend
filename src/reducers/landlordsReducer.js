@@ -2,7 +2,6 @@ export default function landlordsReducer(
   state = [],
   action
 ) {
-  console.log('action is: ', action)
   switch (action.type) {
     case 'LOADING_LANDLORDS':
       return state

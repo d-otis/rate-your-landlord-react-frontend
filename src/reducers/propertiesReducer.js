@@ -2,10 +2,8 @@ export default function propertiesReducer(
   state = [],
   action
 ) {
-  console.log('action is: ', action)
   switch (action.type) {
     case 'LOADING_PROPERTIES':
-      console.log('properties are loading')
       return state
     case 'SET_PROPERTIES':
       const properties = action.payload.data
