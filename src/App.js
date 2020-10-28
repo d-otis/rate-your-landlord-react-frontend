@@ -7,7 +7,7 @@ import { fetchLandlords } from './actions/landlords.actions'
 import { fetchProperties } from './actions/properties.actions'
 import { fetchReviews } from './actions/reviews.actions'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Landlords from './containers/Landlords'
+import LandlordsContainer from './containers/LandlordsContainer'
 
 class App extends Component {
 
@@ -28,7 +28,7 @@ render() {
     <Router>
       <NavBar />
       <Route exact path='/landlords' >
-        <Landlords landlords={landlords} />
+        <LandlordsContainer landlords={landlords} />
       </Route>
     </Router>
 
