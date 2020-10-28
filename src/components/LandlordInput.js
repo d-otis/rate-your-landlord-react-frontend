@@ -4,6 +4,8 @@ const LandlordInput = (props) => {
 
   const [name, setName] = useState('')
 
+  const { createLandlord } = props
+
   const handleChange = e => {
     setName(e.target.value)
   }
@@ -11,7 +13,7 @@ const LandlordInput = (props) => {
   const handleSubmit = e => {
     e.preventDefault()
     console.log("here's the name", name)
-    props.createLandlord(name)
+    createLandlord(name)
     setName('')
   }
 
