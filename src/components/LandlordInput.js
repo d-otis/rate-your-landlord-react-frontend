@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { createLandlord } from '../actions/landlords.actions'
-import { connect } from 'react-redux'
 
 const LandlordInput = (props) => {
 
@@ -41,4 +39,4 @@ const LandlordInput = (props) => {
   )
 }
 
-export default connect(null, { createLandlord })(LandlordInput)
+export default LandlordInput
