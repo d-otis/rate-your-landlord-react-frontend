@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { createLandlord } from '../actions/landlords.actions'
 import { connect } from 'react-redux'
 
-const LandlordInput = () => {
+const LandlordInput = (props) => {
 
   const [name, setName] = useState('')
 
@@ -13,7 +13,7 @@ const LandlordInput = () => {
   const handleSubmit = e => {
     e.preventDefault()
     console.log("here's the name", name)
-
+    props.createLandlord(name)
     setName('')
   }
 
