@@ -22,10 +22,14 @@ class App extends Component {
     }
 
 render() {
+  const { landlords } = this.props
+  // debugger
   return (
     <Router>
       <NavBar />
-      <Route exact path='/landlords' component={Landlords} />
+      <Route exact path='/landlords' >
+        <Landlords landlords={landlords} />
+      </Route>
     </Router>
 
   )
@@ -34,7 +38,11 @@ render() {
 }
 
 const mapStateToProps = state => {
-  return state
+  return {
+    landlords: state.landlords,
+    properties: state.properties,
+    reviews: state.reviews
+  }
 }
 
 export default connect(mapStateToProps, { fetchLandlords, fetchProperties, fetchReviews })(App);
