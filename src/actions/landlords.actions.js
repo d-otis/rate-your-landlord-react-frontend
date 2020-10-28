@@ -7,3 +7,7 @@ export function fetchLandlords() {
       .catch(err => console.log(err))
   }
  }
+
+ export function createLandlord() {
+  return null
+ }
