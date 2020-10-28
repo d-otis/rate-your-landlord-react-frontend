@@ -20,7 +20,16 @@ export default function landlordsReducer(
       })
 
     case "ADD_LANDLORD":
-      return state
+      const landlord = action.payload.data
+
+      return state.concat({
+        id: landlord.id, 
+        name: landlord.attributes.name, 
+        reviews: landlord.relationships.reviews.data, 
+        properties: landlord.relationships.properties.data,
+        rating: landlord.attributes.rating
+      })
+
     default:
       return state
   }
