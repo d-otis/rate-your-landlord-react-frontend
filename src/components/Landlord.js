@@ -24,7 +24,8 @@ function Landlord(props) {
           <ol>
             {reviews.map((review, idx) => <li key={review.id}>Review ID : {review.id}</li>)}
           </ol>
-        : "doesn't have any reviews"}
+        : "doesn't have any reviews"
+      }
      
       <hr />
     </div>
