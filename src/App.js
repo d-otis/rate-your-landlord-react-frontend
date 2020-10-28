@@ -37,12 +37,6 @@ render() {
 
 }
 
-const mapStateToProps = state => {
-  return {
-    landlords: state.landlords,
-    properties: state.properties,
-    reviews: state.reviews
-  }
-}
+const mapStateToProps = state => state
 
 export default connect(mapStateToProps, { fetchLandlords, fetchProperties, fetchReviews })(App);
