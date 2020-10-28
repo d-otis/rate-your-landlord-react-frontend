@@ -27,3 +27,17 @@ export function fetchLandlords() {
       .catch(err => console.log('this is an error:', err))
   }
  }
+
+ export function updateLandlord(landlord) {
+  
+  debugger
+  return dispatch => {
+    fetch(`${BASE_URL}/landlords/${landlord.id}`, config)
+  }
+ }
+
+ export function deleteLandlord(landlord) {
+  return dispatch => {
+    fetch(`${BASE_URL}/landlords`, config)
+  }
+ }
