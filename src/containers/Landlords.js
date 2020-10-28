@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Landlord from '../components/Landlord'
+import LandlordInput from '../components/LandlordInput'
 
 class Landlords extends Component {
 
@@ -10,6 +11,7 @@ class Landlords extends Component {
 
     return (
       <div>
+        <LandlordInput />
         <h1>Landlords Index</h1>
         {landlords.map(landlord => <Landlord key={landlord.id} {...landlord} />)}
       </div>
