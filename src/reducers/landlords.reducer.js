@@ -18,6 +18,9 @@ export default function landlordsReducer(
           rating: landlord.attributes.rating
         })
       })
+
+    case "ADD_LANDLORD":
+      return state
     default:
       return state
   }
