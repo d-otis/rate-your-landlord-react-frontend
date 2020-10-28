@@ -10,6 +10,20 @@ export function fetchLandlords() {
   }
  }
 
- export function createLandlord() {
-  return null
+ export function createLandlord(landlord) {
+  const config = {
+    method: "POST",
+    headers: {
+      "Accept": 'application/json',
+      "Content-Type": 'application/json'
+    },
+    body: JSON.stringify({landlord: {name: landlord}})
+  }
+
+  return (dispatch) => {
+    fetch(`${BASE_URL}/landlords`, config)
+      .then(res => res.json())
+      .then(json => dispatch({type: 'ADD_LANDLORD', payload: json}))
+      .catch(err => console.log('this is an error:', err))
+  }
  }
