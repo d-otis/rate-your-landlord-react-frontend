@@ -29,7 +29,13 @@ export function fetchLandlords() {
  }
 
  export function updateLandlord(landlord) {
-  
+  const config = {
+    method: "PATCH",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    }
+  }
   debugger
   return dispatch => {
     fetch(`${BASE_URL}/landlords/${landlord.id}`, config)
@@ -37,6 +43,13 @@ export function fetchLandlords() {
  }
 
  export function deleteLandlord(landlord) {
+  const config = {
+    method: "DELETE",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    }
+  }
   return dispatch => {
     fetch(`${BASE_URL}/landlords`, config)
   }
