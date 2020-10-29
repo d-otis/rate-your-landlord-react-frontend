@@ -11,7 +11,14 @@ export function fetchProperties() {
 }
 
 export function createProperty(property) {
-  const config = {}
+  const config = {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({property: {address: property.address, landlord_id: property.landlordId} })
+  }
   return dispatch => {
     fetch(`${BASE_URL}/properties`, config)
       .then(res => res.json())
