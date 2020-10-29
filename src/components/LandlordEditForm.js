@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const LandlordEditForm = (props) => {
 
   const [ name, setName ] = useState(props.name)
-  const { setToggleEdit, updateLandlord } = props
+  const { setToggleEdit, updateLandlord, id } = props
 
   const handleSubmit = e => {
     e.preventDefault()
