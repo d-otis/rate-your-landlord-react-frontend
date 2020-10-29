@@ -13,7 +13,7 @@ const PropertyInput = props => {
   const { createProperty, landlords } = props
 
   const [ address, setAddress ] = useState('')
-  const [ landlordId, setLandlordId ] = useState('')
+  const [ landlordId, setLandlordId ] = useState('choose')
 
   const handleAddressChange = e => {
     setAddress(e.target.value)
