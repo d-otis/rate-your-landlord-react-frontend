@@ -4,7 +4,13 @@ function Landlord(props) {
 
   const [ toggleEdit, setToggleEdit ] = useState(false)
 
-  const { id, name, properties, reviews, rating } = props
+  const { id, 
+          name, 
+          properties, 
+          reviews, 
+          rating, 
+          updateLandlord, 
+          deleteLandlord } = props
 
   const handleEditClick = () => {
     setToggleEdit(!toggleEdit)
