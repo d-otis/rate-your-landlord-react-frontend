@@ -14,13 +14,18 @@ const PropertyInput = props => {
 
   const [ address, setAddress ] = useState('')
   const [ landlordId, setLandlordId ] = useState('choose')
+  const [ toggleNewLandlord, setToggleNewLandlord ] = useState(false)
 
   const handleAddressChange = e => {
     setAddress(e.target.value)
   }
 
   const handleLandlordChange = e => {
-    setLandlordId(e.target.value)
+    if (e.target.value !== "new") {
+      setLandlordId(e.target.value)
+    } else {
+      setToggleNewLandlord(true)
+    }
   }
 
   const generateLandlordSelect = () => {
@@ -35,6 +40,7 @@ const PropertyInput = props => {
     createProperty({address: address, landlordId: landlordId})
     setAddress('')
     setLandlordId('choose')
+    setToggleNewLandlord(false)
   }
 
   return(
