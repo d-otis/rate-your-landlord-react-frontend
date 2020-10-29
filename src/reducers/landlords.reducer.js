@@ -11,6 +11,7 @@ export default function landlordsReducer(
       const landlords = action.payload.data
       console.log('SET_LANDLORDS', action)
       return landlords.map(landlord => {
+        // refactor this repeated code
         return ({
           id: landlord.id, 
           name: landlord.attributes.name, 
