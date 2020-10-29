@@ -16,10 +16,12 @@ class LandlordsContainer extends Component {
       <div>
         <LandlordInput 
           createLandlord={createLandlord}
+        />
+        <Landlords 
+          landlords={landlords} 
           updateLandlord={updateLandlord}
           deleteLandlord={deleteLandlord}  
         />
-        <Landlords landlords={landlords} />
       </div>
     )
   }
