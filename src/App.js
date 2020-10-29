@@ -23,7 +23,7 @@ class App extends Component {
     }
 
 render() {
-  const { landlords } = this.props
+  const { landlords, properties } = this.props
   // debugger
   return (
     <Router>
