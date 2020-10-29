@@ -22,6 +22,7 @@ const PropertyInput = props => {
 
   const handleLandlordChange = e => {
     if (e.target.value !== "new") {
+      setToggleNewLandlord(false)
       setLandlordId(e.target.value)
     } else {
       setToggleNewLandlord(true)
