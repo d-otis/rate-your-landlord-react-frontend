@@ -6,6 +6,9 @@ import { createProperty } from '../actions/properties.actions'
 
 class PropertiesContainer extends Component {
   render() {
+
+    const { properties, createProperty, editProperty, deleteProperty } = this.props
+
     return (
       <h1>PropertiesContainer</h1>
     )
