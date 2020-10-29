@@ -10,7 +10,10 @@ class PropertiesContainer extends Component {
     const { properties, createProperty, editProperty, deleteProperty } = this.props
 
     return (
-      <h1>PropertiesContainer</h1>
+      <div>
+        <PropertyInput createProperty={createProperty} />
+        <Properties properties={properties} editProperty={editProperty} deleteProperty={deleteProperty} />
+      </div>
     )
   }
 }
