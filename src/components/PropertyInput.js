@@ -26,6 +26,7 @@ const PropertyInput = props => {
       setLandlordId(e.target.value)
     } else {
       setToggleNewLandlord(true)
+      setLandlordId(e.target.value)
     }
   }
 
