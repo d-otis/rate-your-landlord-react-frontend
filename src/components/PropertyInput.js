@@ -39,7 +39,7 @@ const PropertyInput = props => {
           id="address"
           placeholder="type address here"
           value={address}
-          onChange={handleChange}
+          onChange={handleAddressChange}
         />
         <br />
         <label htmlFor="landlord">Choose a Landlord: </label>
