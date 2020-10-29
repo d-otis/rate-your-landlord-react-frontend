@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import LandlordEditForm from './LandlordEditForm'
 
 function Landlord(props) {
 
@@ -16,34 +17,12 @@ function Landlord(props) {
     setToggleEdit(!toggleEdit)
   }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    console.log(`you've edited the ${name}`)
-    setToggleEdit(false)
-  }
-
-  const renderEditForm = () => {
-    return (
-      <form onSubmit={handleSubmit}>
-        <input 
-          type="text"
-          value={name}
-        />
-        <input 
-          type="submit"
-          value="Save"
-        />
-      </form>
-
-    )
-  }
-
   return (
     <div key={id}>
       <h2>{name}</h2>
       <button onClick={handleEditClick} >Edit Landlord</button>
       <br />
-      {toggleEdit && renderEditForm()}
+      {toggleEdit && <LandlordEditForm name={name} updateLandlord={updateLandlord} id={id} setToggleEdit={setToggleEdit} />}
       <h3>Rating: {rating}</h3>
       <h3>Properties:</h3>
 
