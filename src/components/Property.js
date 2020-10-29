@@ -11,7 +11,15 @@ const Property = ({ address, hasImage, id, imageUrl, landlordId, reviews, landlo
   return (
     <div>
       <h1>A Property</h1>
-      <p>{address}</p>
+      <ul>
+        <li>address: {address}</li>
+        <li>hasImage: {hasImage ? 'yes' : 'no'}</li>
+        <li>imageUrl: {imageUrl ? 'url here' : 'n/a'}</li>
+        <li>landlord: {getLandlordName(landlordId)}</li>
+        <li># of reviews: {reviews.length}</li>
+        <button>Add a Review</button>
+      </ul>
+      <hr />
     </div>
 
   )
