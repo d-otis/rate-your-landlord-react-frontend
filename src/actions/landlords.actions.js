@@ -28,17 +28,21 @@ export function fetchLandlords() {
   }
  }
 
- export function updateLandlord(landlord) {
+ export function updateLandlord(landlordId, name) {
   const config = {
     method: "PATCH",
     headers: {
       "Accept": "application/json",
       "Content-Type": "application/json"
-    }
+    },
+    body: JSON.stringify({landlord: {name: name}})
   }
-  debugger
+  // debugger
   return dispatch => {
-    fetch(`${BASE_URL}/landlords/${landlord.id}`, config)
+    fetch(`${BASE_URL}/landlords/${landlordId}`, config)
+      .then(res => res.json())
+      .then(json => dispatch({type: "UPDATE_LANDLORD", payload: json}))
+      .catch(err => console.error(err))
   }
  }
 
