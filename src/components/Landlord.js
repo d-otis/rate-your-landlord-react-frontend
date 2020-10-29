@@ -17,9 +17,10 @@ function Landlord(props) {
     setToggleEdit(!toggleEdit)
   }
 
+
   return (
     <div key={id}>
-      <h2>{name}</h2>
+      <h2>{name} <button onClick={() => deleteLandlord(id)}>X</button></h2>
       <button onClick={handleEditClick} >Edit Landlord</button>
       <br />
       {toggleEdit && <LandlordEditForm name={name} updateLandlord={updateLandlord} id={id} setToggleEdit={setToggleEdit} />}
