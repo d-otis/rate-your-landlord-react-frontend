@@ -55,6 +55,10 @@ export default function landlordsReducer(
         ...state.slice(index + 1)
       ]
 
+    case "DELETE_LANDLORD":
+      let deletedLandlordId = action.payload.data.id
+      
+      return state.filter(landlord => landlord.id !== deletedLandlordId)
     default:
       return state
   }
