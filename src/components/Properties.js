@@ -9,7 +9,6 @@ const Properties = ({ properties, landlords }) => {
 
   return(
     <div>
-      <h1>Properties Index</h1>
       {generateProperties()}
     </div>
 
