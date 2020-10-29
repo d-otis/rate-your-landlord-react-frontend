@@ -27,10 +27,4 @@ class LandlordsContainer extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    landlords: state.landlords
-  }
-}
-
-export default connect(mapStateToProps, { createLandlord, updateLandlord, deleteLandlord })(LandlordsContainer)
+export default connect(null, { createLandlord, updateLandlord, deleteLandlord })(LandlordsContainer)
