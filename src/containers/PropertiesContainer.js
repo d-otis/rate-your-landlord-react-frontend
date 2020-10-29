@@ -7,15 +7,22 @@ import { createProperty } from '../actions/properties.actions'
 class PropertiesContainer extends Component {
   render() {
 
-    const { properties, createProperty, editProperty, deleteProperty } = this.props
+    const { properties, createProperty, editProperty, deleteProperty, landlords } = this.props
 
     return (
       <div>
-        <PropertyInput createProperty={createProperty} />
+        <PropertyInput createProperty={createProperty} landlords={landlords} />
         <Properties properties={properties} editProperty={editProperty} deleteProperty={deleteProperty} />
       </div>
     )
   }
 }
 
-export default connect(null, { createProperty })(PropertiesContainer)
+const mapStateToProps = state => {
+  return {
+    properties: state.properties,
+    landlords: state.landlords
+  }
+}
+
+export default connect(mapStateToProps, { createProperty })(PropertiesContainer)
