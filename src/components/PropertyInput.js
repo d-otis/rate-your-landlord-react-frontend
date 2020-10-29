@@ -39,6 +39,8 @@ const PropertyInput = props => {
     e.preventDefault()
     if (landlordId === 'choose') alert('you must select a landlord or create a new one')
     console.log(`you've submitted Property at ${address} owned by ${landlordId}`)
+    // use some conditionals for if we've created a new landlord so
+    // so we can pass off that info to the createLandlord() dispatch action
     createProperty({address: address, landlordId: landlordId})
     setAddress('')
     setLandlordId('choose')
