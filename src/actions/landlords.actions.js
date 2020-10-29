@@ -46,7 +46,7 @@ export function fetchLandlords() {
   }
  }
 
- export function deleteLandlord(landlord) {
+ export function deleteLandlord(landlordId) {
   const config = {
     method: "DELETE",
     headers: {
@@ -55,6 +55,9 @@ export function fetchLandlords() {
     }
   }
   return dispatch => {
-    fetch(`${BASE_URL}/landlords`, config)
+    fetch(`${BASE_URL}/landlords/${landlordId}`, config)
+      .then(res => res.json())
+      .then(json => dispatch({type: "DELETE_LANDLORD", payload: json}))
+      .catch(err => console.error(err))
   }
  }
