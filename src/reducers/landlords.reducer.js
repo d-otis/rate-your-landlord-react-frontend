@@ -2,6 +2,7 @@ export default function landlordsReducer(
   state = [],
   action
 ) {
+  let landlord
   switch (action.type) {
     case 'LOADING_LANDLORDS':
     console.log('LOADING_LANDLORDS', action)
@@ -20,9 +21,11 @@ export default function landlordsReducer(
       })
 
     case "ADD_LANDLORD":
-      const landlord = action.payload.data
+      // const landlord = action.payload.data
+      landlord = action.payload.data
 
       return state.concat({
+        // refactor this repeated code
         id: landlord.id, 
         name: landlord.attributes.name, 
         reviews: landlord.relationships.reviews.data, 
