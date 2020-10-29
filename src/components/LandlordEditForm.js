@@ -8,6 +8,7 @@ const LandlordEditForm = (props) => {
   const handleSubmit = e => {
     e.preventDefault()
     console.log(`you've edited the ${name}`)
+    updateLandlord(id, name)
     setToggleEdit(false)
   }
 
