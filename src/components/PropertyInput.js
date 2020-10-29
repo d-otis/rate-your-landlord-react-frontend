@@ -19,6 +19,10 @@ const PropertyInput = props => {
     setAddress(e.target.value)
   }
 
+  const handleLandlordChange = e => {
+    setLandlordId(e.target.value)
+  }
+
   const generateLandlordSelect = () => {
     return landlords.map(landlord => <option value={landlord.id}>{landlord.name}</option>)
   }
