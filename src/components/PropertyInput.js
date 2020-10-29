@@ -24,13 +24,23 @@ const PropertyInput = props => {
   }
 
   const generateLandlordSelect = () => {
-    return landlords.map(landlord => <option value={landlord.id}>{landlord.name}</option>)
+    return landlords.map(landlord => <option key={landlord.id} value={landlord.id}>{landlord.name}</option>)
+  }
+
+  const handleSubmit = e => {
+    // validations for address and selecting a landlord
+    e.preventDefault()
+    if (landlordId === 'choose') alert('you must select a landlord or create a new one')
+    console.log(`you've submitted Property at ${address} owned by ${landlordId}`)
+    createProperty({address: address, landlordId: landlordId})
+    setAddress('')
+    setLandlordId('choose')
   }
 
   return(
     <div>
       <h1>Add a Property</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="address">Address: </label>
         <br />
         <input 
