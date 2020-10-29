@@ -54,8 +54,8 @@ const PropertyInput = props => {
         <br />
         <label htmlFor="landlord">Choose a Landlord: </label>
         <br />
-        <select name="" id="landlord" onChange={handleLandlordChange}>
-          <option value="">Select:</option>
+        <select name="" id="landlord" onChange={handleLandlordChange} value={landlordId} >
+          <option value="choose">Select:</option>
             {generateLandlordSelect()}
           <option value="new">Create a New Landlord</option>
         </select>
