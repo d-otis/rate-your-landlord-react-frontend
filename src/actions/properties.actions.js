@@ -22,7 +22,7 @@ export function createProperty(property) {
   return dispatch => {
     fetch(`${BASE_URL}/properties`, config)
       .then(res => res.json())
-      .then(json => dispatch({type: "ADD_LANDLORD", payload: json}))
+      .then(json => dispatch({type: "ADD_PROPERTY", payload: json}))
       .catch(err => console.error(err))
   }
 }
