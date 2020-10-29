@@ -19,7 +19,6 @@ const LandlordInput = (props) => {
 
   return (
     <div>
-      <h1>LandlordInput</h1>
       <form onSubmit={handleSubmit} >
       <label htmlFor="landlord-name">Create a Landlord</label>
       <br />
