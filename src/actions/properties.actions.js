@@ -1,3 +1,5 @@
+import { BASE_URL } from '../utils/baseURL'
+
 export function fetchProperties() {
   return (dispatch) => {
     dispatch({type: 'LOADING_PROPERTIES'})

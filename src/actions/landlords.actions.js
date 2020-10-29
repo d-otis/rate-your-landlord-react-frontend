@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000/api/v1'
+import { BASE_URL } from '../utils/baseURL'
 
 export function fetchLandlords() {
   return (dispatch) => {
