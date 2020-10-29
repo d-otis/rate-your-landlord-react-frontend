@@ -1,9 +1,7 @@
 import React from 'react'
 import Property from './Property'
 
-const Properties = props => {
-
-  const { properties } = props
+const Properties = ({ properties }) => {
 
   const generateProperties = () => {
     return properties.map(property => <Property key={property.id} {...property} />)
