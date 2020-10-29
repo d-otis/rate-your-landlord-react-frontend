@@ -1,3 +1,6 @@
+Frontend located @
+[running tests](https://www.github.com/d-otis/rate-your-landlord-backend)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
