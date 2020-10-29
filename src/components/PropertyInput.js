@@ -45,6 +45,17 @@ const PropertyInput = props => {
     setToggleNewLandlord(false)
   }
 
+  const renderLandlordInput = () => {
+    return(
+      <React.Fragment>
+        <br />
+        <label htmlFor="landlord-name">Add a new Landlord</label>
+        <br />
+        <input type="text" placeholder="Enter landlord's name" />
+      </React.Fragment>
+    )
+  }
+
   return(
     <div>
       <h1>Add a Property</h1>
@@ -67,6 +78,7 @@ const PropertyInput = props => {
             {generateLandlordSelect()}
           <option value="new">Create a New Landlord</option>
         </select>
+        {toggleNewLandlord && renderLandlordInput()}
         <br />
         <small>[Photo Upload!]</small>
         <br />
