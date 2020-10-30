@@ -45,7 +45,17 @@ const PropertyInput = props => {
     console.log(`you've submitted Property at ${address} owned by ${landlordId}`)
     // use some conditionals for if we've created a new landlord so
     // so we can pass off that info to the createLandlord() dispatch action
-    createProperty({address: address, landlordId: landlordId})
+    // in this situation we'll have to create the landlord FIRST
+    // then the property: so we can use that newly created landlords's ID
+    // createProperty({address: address, landlordId: landlordId})
+
+    if (toggleNewLandlord) {
+      // nested attrs for creating new landlord
+    } else {
+      createProperty({address: address, landlordId: landlordId})
+    }
+
+    // below should happen no matter what
     setAddress('')
     setLandlordId('choose')
     setToggleNewLandlord(false)
