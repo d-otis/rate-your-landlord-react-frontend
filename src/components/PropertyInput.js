@@ -36,7 +36,11 @@ const PropertyInput = props => {
 
   const handleSubmit = e => {
     // validations for address and selecting a landlord
+
+    // should always happen
     e.preventDefault()
+
+    // make this a proper validation
     if (landlordId === 'choose') alert('you must select a landlord or create a new one')
     console.log(`you've submitted Property at ${address} owned by ${landlordId}`)
     // use some conditionals for if we've created a new landlord so
