@@ -4,14 +4,16 @@ import { useRouteMatch, Switch, Route, Link } from 'react-router-dom'
 
 const Properties = ({ properties, landlords }) => {
 
-  const generateProperties = () => {
-    return properties.map(property => <Property key={property.id} {...property} landlords={landlords} />)
+  let { path } = useRouteMatch()
+
+  const generatePropertiesList = () => {
+    // return properties.map(property => <Property key={property.id} {...property} landlords={landlords} />)
+    return properties.map(property => <li key={property.id}><Link to={`/properties/${property.id}`} > {property.address} </Link></li>)
   }
 
   return(
     <div>
-      {generateProperties()}
-    </div>
+      {generatePropertiesList()}
 
   )
 }
