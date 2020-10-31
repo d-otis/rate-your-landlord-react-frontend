@@ -14,15 +14,13 @@ const Property = ({ match, properties, landlords }) => {
 
   return (
     <div>
-      <h1>{address}</h1>
+      <h1>{property?.address || "Loading"}</h1>
       <ul>
-        <li>hasImage: {hasImage ? 'yes' : 'no'}</li>
-        <li>imageUrl: {imageUrl ? 'url here' : 'n/a'}</li>
-        <li>landlord: {getLandlordName(landlordId)}</li>
-        <li># of reviews: {reviews.length}</li>
-        <button>Add a Review</button>
+        <li>hasImage: {property?.hasImage ? 'yes' : 'no'}</li>
+        <li>Number of Reviews: {property?.reviews.length}</li>
+        <li>Landlord: {getLandlordName(property?.landlordId)}</li>
       </ul>
-      <hr />
+      <button>Leave a Review</button>
     </div>
 
   )
