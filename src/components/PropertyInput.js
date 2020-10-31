@@ -15,6 +15,7 @@ const PropertyInput = props => {
   const [ address, setAddress ] = useState('')
   const [ landlordId, setLandlordId ] = useState('choose')
   const [ showNewLandlordInput, setShowNewLandlordInput ] = useState(false)
+  const [ landlordName, setLandlordName ] = useState('')
 
   const handleAddressChange = e => {
     setAddress(e.target.value)
@@ -66,9 +67,18 @@ const PropertyInput = props => {
         <br />
         <label htmlFor="landlord-name">Add a new Landlord</label>
         <br />
-        <input type="text" placeholder="Enter landlord's name" />
+        <input 
+          type="text" 
+          placeholder="Enter landlord's name" 
+          onChange={handleLandlordNameChange} 
+          value={landlordName}
+        />
       </React.Fragment>
     )
+  }
+
+  const handleLandlordNameChange = e => {
+    setLandlordName(e.target.value)
   }
 
   return(
