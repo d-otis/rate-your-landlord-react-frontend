@@ -10,14 +10,14 @@ export function fetchLandlords() {
   }
  }
 
- export function createLandlord(landlord) {
+ export function createLandlord(landlordData) {
   const config = {
     method: "POST",
     headers: {
       "Accept": 'application/json',
       "Content-Type": 'application/json'
     },
-    body: JSON.stringify({landlord: {name: landlord}})
+    body: JSON.stringify({landlord: landlordData})
   }
 
   return (dispatch) => {
