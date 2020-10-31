@@ -10,7 +10,7 @@ const PropertyInput = props => {
   //   landlordId: 1385919387127983
   // }
 
-  const { createProperty, landlords } = props
+  const { createProperty, landlords, createLandlord, fetchProperties } = props
 
   const [ address, setAddress ] = useState('')
   const [ landlordId, setLandlordId ] = useState('choose')
