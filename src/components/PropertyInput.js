@@ -51,6 +51,8 @@ const PropertyInput = props => {
 
     if (showNewLandlordInput) {
       // nested attrs for creating new landlord
+      createLandlord({name: landlordName, properties_attributes: [{address: address}]})
+      fetchProperties()
     } else {
       createProperty({address: address, landlordId: landlordId})
     }
