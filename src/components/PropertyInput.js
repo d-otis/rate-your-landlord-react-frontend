@@ -14,7 +14,7 @@ const PropertyInput = props => {
 
   const [ address, setAddress ] = useState('')
   const [ landlordId, setLandlordId ] = useState('choose')
-  const [ toggleNewLandlord, setToggleNewLandlord ] = useState(false)
+  const [ showNewLandlordInput, setShowNewLandlordInput ] = useState(false)
 
   const handleAddressChange = e => {
     setAddress(e.target.value)
@@ -22,10 +22,10 @@ const PropertyInput = props => {
 
   const handleLandlordChange = e => {
     if (e.target.value !== "new") {
-      setToggleNewLandlord(false)
+      setShowNewLandlordInput(false)
       setLandlordId(e.target.value)
     } else {
-      setToggleNewLandlord(true)
+      setShowNewLandlordInput(true)
       setLandlordId(e.target.value)
     }
   }
@@ -36,7 +36,6 @@ const PropertyInput = props => {
 
   const handleSubmit = e => {
     // validations for address and selecting a landlord
-
     // should always happen
     e.preventDefault()
 
@@ -49,7 +48,7 @@ const PropertyInput = props => {
     // then the property: so we can use that newly created landlords's ID
     // createProperty({address: address, landlordId: landlordId})
 
-    if (toggleNewLandlord) {
+    if (showNewLandlordInput) {
       // nested attrs for creating new landlord
     } else {
       createProperty({address: address, landlordId: landlordId})
@@ -58,7 +57,7 @@ const PropertyInput = props => {
     // below should happen no matter what
     setAddress('')
     setLandlordId('choose')
-    setToggleNewLandlord(false)
+    setShowNewLandlordInput(false)
   }
 
   const renderLandlordInput = () => {
@@ -94,7 +93,7 @@ const PropertyInput = props => {
             {generateLandlordSelect()}
           <option value="new">Create a New Landlord</option>
         </select>
-        {toggleNewLandlord && renderLandlordInput()}
+        {showNewLandlordInput && renderLandlordInput()}
         <br />
         <small>[Photo Upload!]</small>
         <br />
