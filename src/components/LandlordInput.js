@@ -13,7 +13,7 @@ const LandlordInput = (props) => {
   const handleSubmit = e => {
     e.preventDefault()
     console.log("here's the name", name)
-    createLandlord(name)
+    createLandlord({name: name})
     setName('')
   }
 
