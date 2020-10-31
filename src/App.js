@@ -22,23 +22,21 @@ class App extends Component {
       this.props.fetchReviews()
     }
 
-render() {
-  const { landlords, properties } = this.props
-  // debugger
-  return (
-    <Router>
-      <NavBar />
-      <Route exact path='/landlords' >
-        <LandlordsContainer landlords={landlords} />
-      </Route>
-      <Route exact path='/properties' >
-        <PropertiesContainer properties={properties} />
-      </Route>
-    </Router>
-
-  )
-}
-
+    render() {
+      const { landlords } = this.props
+      // debugger
+      return (
+        <Router>
+          <NavBar />
+          <Route exact path='/landlords' >
+            <LandlordsContainer landlords={landlords} />
+          </Route>
+          <Route path='/properties' >
+            <PropertiesContainer />
+          </Route>
+        </Router>
+      )
+    }
 }
 
 const mapStateToProps = state => state
