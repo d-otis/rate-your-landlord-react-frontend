@@ -1,6 +1,10 @@
 import React from 'react'
 
-const Property = ({ address, hasImage, id, imageUrl, landlordId, reviews, landlords }) => {
+const Property = ({ match, properties, landlords }) => {
+
+  let { propertyId } = match.params
+
+  const property = properties.filter(property => property.id === propertyId)[0]
   
   const getLandlordName = id => {
     // debugger
