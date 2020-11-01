@@ -21,7 +21,7 @@ const ReviewInput = ({ propertyId }) => {
 
   return(
     <div>
-      <form action="">
+      <form>
         <textarea name="" id="" cols="30" rows="5" onChange={handleContentChange} value={content}></textarea>
       <br />
       <label htmlFor="rating-range">Select a Rating</label>
