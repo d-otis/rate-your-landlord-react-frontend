@@ -13,6 +13,14 @@ const Property = ({ match, properties, landlords }) => {
     return idx !== -1 ? landlords[idx].name : ""
   }
 
+  const toggleShowReviewInput = () => setShowReviewInput(!showReviewInput)
+
+  const generateReviewInput = () => {
+    return (
+      <h1>text area</h1>
+    )
+  }
+
   const generateProperty = () => {
    return (
     <React.Fragment>
@@ -22,7 +30,9 @@ const Property = ({ match, properties, landlords }) => {
          <li>Number of Reviews: {property?.reviews.length}</li>
          <li>Landlord: {getLandlordName(property?.landlordId)}</li>
        </ul>
-       <button>Leave a Review</button>
+       {showReviewInput && generateReviewInput()}
+       <button onClick={toggleShowReviewInput}>Leave a Review</button>
+       
      </React.Fragment>
     )
   }
