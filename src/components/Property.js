@@ -23,6 +23,7 @@ const Property = ({ match, properties, landlords }) => {
        <ul>
          <li>hasImage: {property?.hasImage ? 'yes' : 'no'}</li>
          <li>Number of Reviews: {property?.reviews.length}</li>
+         <li>Average Rating: {property?.rating} </li>
          <li>Landlord: {getLandlordName(property?.landlordId)}</li>
        </ul>
        {showReviewInput && <ReviewInput propertyId={propertyId} setShowReviewInput={setShowReviewInput} />}
