@@ -15,6 +15,9 @@ export default function reviewsReducer(
           rating: review.attributes.rating
         })
       })
+    case 'ADD_REVIEW':
+      debugger
+      return state
     default:
       return state
   }
