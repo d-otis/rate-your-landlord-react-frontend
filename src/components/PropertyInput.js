@@ -112,6 +112,7 @@ const PropertyInput = props => {
         <small>[Photo Upload!]</small>
         <br />
         <input type="submit" value="Create Property" />
+      <hr />
       </form>
     </div>
   )
