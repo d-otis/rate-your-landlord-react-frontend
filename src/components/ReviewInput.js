@@ -23,8 +23,7 @@ const ReviewInput = ({ propertyId, createReview, setShowReviewInput }) => {
       rating: rating,
       property_id: propertyId 
     })
-    // AFTER SUBMIT:
-    // close review component (via boolean prop passed down from parent)
+    // unmounts this entire component
     setShowReviewInput(false)
   }
 
