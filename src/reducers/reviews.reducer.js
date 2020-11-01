@@ -16,8 +16,14 @@ export default function reviewsReducer(
         })
       })
     case 'ADD_REVIEW':
-      debugger
-      return state
+      const review = action.payload.data
+      
+      return state.concat({
+        id: review.id,
+        content: review.attributes.content,
+        rating: review.attributes.rating,
+        propertyId: review.attributes.property_id
+      })
     default:
       return state
   }
