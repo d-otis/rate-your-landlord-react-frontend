@@ -1,3 +1,5 @@
+import { formatRating } from '../utils/misc.util'
+
 export default function landlordsReducer(
   // REFACTOR: so that state is an object and memoized using landlord ids
   state = [],
@@ -18,7 +20,7 @@ export default function landlordsReducer(
           name: landlord.attributes.name, 
           reviews: landlord.relationships.reviews.data, 
           properties: landlord.relationships.properties.data,
-          rating: landlord.attributes.rating
+          rating: formatRating(landlord.attributes.rating)
         })
       })
 
@@ -32,7 +34,7 @@ export default function landlordsReducer(
         name: landlord.attributes.name, 
         reviews: landlord.relationships.reviews.data, 
         properties: landlord.relationships.properties.data,
-        rating: landlord.attributes.rating
+        rating: formatRating(landlord.attributes.rating)
       })
 
     case "UPDATE_LANDLORD":
