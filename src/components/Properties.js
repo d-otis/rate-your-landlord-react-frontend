@@ -13,11 +13,13 @@ const Properties = ({ properties, landlords }) => {
 
   return(
     <div>
+    <h2>Property Links</h2>
       {generatePropertiesList()}
-
+      <hr />
       <Switch>
         <Route path={`${path}/:propertyId`} render={routerProps => <Property {...routerProps} properties={properties} landlords={landlords} />} />
       </Switch>
+
     </div>
   )
 }
