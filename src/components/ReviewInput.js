@@ -11,7 +11,7 @@ const ReviewInput = ({ propertyId }) => {
   return(
     <div>
       <form action="">
-        <textarea name="" id="" cols="30" rows="10" onChange={handleContentChange} value={content}></textarea>
+        <textarea name="" id="" cols="30" rows="5" onChange={handleContentChange} value={content}></textarea>
       <br />
       <input type="submit" value="Save Review" />
       </form>
