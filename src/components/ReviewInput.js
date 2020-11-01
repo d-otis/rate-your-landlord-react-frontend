@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 const ReviewInput = ({ propertyId }) => {
 
   const [ content, setContent ] = useState('')
+  const [ rating, setRating ] = useState(5)
+  const [ hasErrors, setHasErrors ] = useState(false)
 
   const handleContentChange = e => {
     setContent(e.target.value)
