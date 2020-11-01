@@ -21,7 +21,7 @@ export function createReview({ content, rating, property_id }) {
     },
     body: JSON.stringify({review: { content, rating, property_id }})
   }
-  debugger
+
   return dispatch => {
     fetch(REVIEWS_PATH, config)
       .then(res => res.json())
