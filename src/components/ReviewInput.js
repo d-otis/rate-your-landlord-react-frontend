@@ -18,10 +18,6 @@ const ReviewInput = ({ propertyId }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    // handle if a rating hasn't been selected
-    debugger
-    // need to send {} 
-    // with keys: content, rating, landlord_id
     createReview({
       content: content,
       rating: rating,
