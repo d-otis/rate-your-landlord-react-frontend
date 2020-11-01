@@ -1,8 +1,11 @@
+import { formatRating } from '../utils/misc.util'
+
 export default function propertiesReducer(
   state = [],
   action
 ) {
   let propertyJSON
+
   switch (action.type) {
     case 'LOADING_PROPERTIES':
       return state
@@ -16,7 +19,8 @@ export default function propertiesReducer(
           reviews: property.relationships.reviews.data,
           landlordId: property.attributes.landlord_id,
           imageUrl: property.attributes.image_url,
-          hasImage: property.attributes.has_image
+          hasImage: property.attributes.has_image,
+          rating: formatRating(property.attributes.rating)
         })
       })
 
@@ -29,10 +33,9 @@ export default function propertiesReducer(
         reviews: propertyJSON.relationships.reviews.data,
         landlordId: propertyJSON.attributes.landlord_id,
         imageUrl: propertyJSON.attributes.image_url,
-        hasImage: propertyJSON.attributes.has_image
-      }
-
-      return state.concat(property)
+        hasImage: propertyJSON.attributes.has_image,
+        rating: formatRating(propertyJSON.attributes.rating)
+      })
     default:
       return state
   }
