@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import { createReview } from '../actions/reviews.actions'
 
 const ReviewInput = ({ propertyId }) => {
