@@ -19,7 +19,7 @@ export function createReview({ content, rating, property_id }) {
       "Accept": "application/json",
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({review: { content, rating, landlord_id }})
+    body: JSON.stringify({review: { content, rating, property_id }})
   }
   debugger
   return dispatch => {
