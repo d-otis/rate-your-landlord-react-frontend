@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { createReview } from '../actions/reviews.actions'
 
-const ReviewInput = ({ propertyId, createReview }) => {
+const ReviewInput = ({ propertyId, createReview, setShowReviewInput }) => {
 
   const [ content, setContent ] = useState('')
   const [ rating, setRating ] = useState(5)
@@ -25,6 +25,7 @@ const ReviewInput = ({ propertyId, createReview }) => {
     })
     // AFTER SUBMIT:
     // close review component (via boolean prop passed down from parent)
+    setShowReviewInput(false)
   }
 
   return(
