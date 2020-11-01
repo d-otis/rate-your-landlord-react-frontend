@@ -5,7 +5,7 @@ const ReviewInput = ({ propertyId }) => {
   const [ content, setContent ] = useState('')
 
   const handleContentChange = e => {
-
+    setContent(e.target.value)
   }
 
   return(
