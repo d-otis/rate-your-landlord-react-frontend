@@ -26,7 +26,7 @@ const ReviewInput = ({ propertyId }) => {
       <br />
       <label htmlFor="rating-range">Select a Rating</label>
       <br />
-      <input type="range" min="1" max="5" id="raiting-range" onChange={handleRatingChange} /> {rating}
+      <input type="range" min="1" max="5" id="rating-range" onChange={handleRatingChange} /> {rating}
       <br />
       <input type="submit" value="Save Review" />
       </form>
