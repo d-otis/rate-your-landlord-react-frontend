@@ -26,8 +26,8 @@ export default function propertiesReducer(
 
     case "ADD_PROPERTY":
       propertyJSON = action.payload.data
-      
-      const property = {
+
+      return state.concat({
         id: propertyJSON.id,
         address: propertyJSON.attributes.address,
         reviews: propertyJSON.relationships.reviews.data,
