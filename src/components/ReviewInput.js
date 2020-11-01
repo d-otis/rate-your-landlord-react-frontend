@@ -10,6 +10,15 @@ const ReviewInput = ({ propertyId }) => {
     setContent(e.target.value)
   }
 
+  const handleRatingChange = e => {
+    setRating(e.target.value)
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    // handle if a rating hasn't been selected
+  }
+
   return(
     <div>
       <form action="">
