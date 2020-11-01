@@ -7,7 +7,6 @@ const Property = ({ match, properties, landlords }) => {
   const property = properties.filter(property => property.id === propertyId)[0]
   
   const getLandlordName = id => {
-    // debugger
     let idx = landlords.findIndex(landlord => landlord.id === id)
     return idx !== -1 ? landlords[idx].name : ""
   }
@@ -22,7 +21,6 @@ const Property = ({ match, properties, landlords }) => {
       </ul>
       <button>Leave a Review</button>
     </div>
-
   )
 }
 
