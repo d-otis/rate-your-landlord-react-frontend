@@ -1,3 +1,3 @@
 export function formatRating(rating) {
-  return Number(rating).toPrecision(3)
+  return rating ? Number(rating).toPrecision(3) : "no reviews yet"
 }
