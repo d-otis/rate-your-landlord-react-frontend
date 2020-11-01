@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ReviewInput from './ReviewInput'
 
 const Property = ({ match, properties, landlords }) => {
 
@@ -15,12 +16,6 @@ const Property = ({ match, properties, landlords }) => {
 
   const toggleShowReviewInput = () => setShowReviewInput(!showReviewInput)
 
-  const generateReviewInput = () => {
-    return (
-      <h1>text area</h1>
-    )
-  }
-
   const generateProperty = () => {
    return (
     <React.Fragment>
@@ -30,8 +25,7 @@ const Property = ({ match, properties, landlords }) => {
          <li>Number of Reviews: {property?.reviews.length}</li>
          <li>Landlord: {getLandlordName(property?.landlordId)}</li>
        </ul>
-       {showReviewInput && generateReviewInput()}
-       <button onClick={toggleShowReviewInput}>Leave a Review</button>
+       {showReviewInput && <ReviewInput propertyId={propertyId} />}
        
      </React.Fragment>
     )
