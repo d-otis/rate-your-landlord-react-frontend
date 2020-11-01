@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Property = ({ match, properties, landlords }) => {
 
   let { propertyId } = match.params
+
+  const [ showReviewInput, setShowReviewInput ] = useState(false)
 
   const property = properties.filter(property => property.id === propertyId)[0]
   
