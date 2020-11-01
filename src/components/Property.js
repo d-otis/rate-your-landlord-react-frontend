@@ -27,6 +27,7 @@ const Property = ({ match, properties, landlords }) => {
        </ul>
        {showReviewInput && <ReviewInput propertyId={propertyId} />}
        
+       {showReviewInput || <button onClick={toggleShowReviewInput}>Leave a Review</button>}
      </React.Fragment>
     )
   }
