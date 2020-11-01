@@ -11,15 +11,23 @@ const Property = ({ match, properties, landlords }) => {
     return idx !== -1 ? landlords[idx].name : ""
   }
 
+  const generateProperty = () => {
+   return (
+    <React.Fragment>
+       <h1>{property?.address || "Loading"}</h1>
+       <ul>
+         <li>hasImage: {property?.hasImage ? 'yes' : 'no'}</li>
+         <li>Number of Reviews: {property?.reviews.length}</li>
+         <li>Landlord: {getLandlordName(property?.landlordId)}</li>
+       </ul>
+       <button>Leave a Review</button>
+     </React.Fragment>
+    )
+  }
+
   return (
     <div>
-      <h1>{property?.address || "Loading"}</h1>
-      <ul>
-        <li>hasImage: {property?.hasImage ? 'yes' : 'no'}</li>
-        <li>Number of Reviews: {property?.reviews.length}</li>
-        <li>Landlord: {getLandlordName(property?.landlordId)}</li>
-      </ul>
-      <button>Leave a Review</button>
+      {property && generateProperty()}
     </div>
   )
 }
