@@ -28,9 +28,8 @@ class App extends Component {
       return (
         <Router>
           <NavBar />
-          <Route exact path='/landlords' >
-            <LandlordsContainer landlords={landlords} />
-          </Route>
+          <Route exact path='/landlords' component={LandlordsContainer} />
+
           <Route path='/properties' >
             <PropertiesContainer />
           </Route>
