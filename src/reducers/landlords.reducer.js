@@ -7,6 +7,9 @@ export default function landlordsReducer(
 ) {
   let landlord
   let stateCopy
+  let newRating
+  let propertyId
+  let landlordId
   switch (action.type) {
     case 'LOADING_LANDLORDS':
 
@@ -71,6 +74,22 @@ export default function landlordsReducer(
       delete stateCopy[deletedLandlordId]
       
       return stateCopy
+
+    case "ADD_REVIEW":
+    // update landlord's rating on frontend
+    // in response to new rating
+    // make array of landlord keys
+    // map through them to get to properties where
+
+    newRating = action.payload.data.attributes.rating
+    propertyId = action.payload.data.attributes.property_id
+    landlordId = action.payload.data.attributes.landlord_id
+    let landlordRating = formatRating(action.payload.data.attributes.landlord_rating)
+    
+    stateCopy = Object.assign({}, state)
+    stateCopy[landlordId].rating = landlordRating
+
+    return stateCopy
 
     default:
       return state
