@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { updateLandlord } from '../actions/landlords.actions'
+import { connect } from 'react-redux'
 
-const LandlordEditForm = (props) => {
+const LandlordEditForm = ({ name: landlordName, setToggleEdit, updateLandlord, id }) => {
 
   const [ name, setName ] = useState(props.name)
   const { setToggleEdit, updateLandlord, id } = props
@@ -30,4 +32,4 @@ const LandlordEditForm = (props) => {
 
 }
 
-export default LandlordEditForm
+export default connect(null, { updateLandlord })(LandlordEditForm)
