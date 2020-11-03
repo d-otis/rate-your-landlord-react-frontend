@@ -46,8 +46,6 @@ export default function landlordsReducer(
       return stateCopy
 
     case "UPDATE_LANDLORD":
-      // find the record and replace it with this returned JSON
-      const index = state.findIndex(landlord => landlord.id === action.payload.data.id)
 
     landlord = action.payload.data
 
