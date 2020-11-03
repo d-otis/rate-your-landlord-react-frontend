@@ -32,14 +32,18 @@ export default function landlordsReducer(
       // const landlord = action.payload.data
       landlord = action.payload.data
 
-      return state.concat({
-        // refactor this repeated code
+      let newLandlord = {
         id: landlord.id, 
         name: landlord.attributes.name, 
         reviews: landlord.relationships.reviews.data, 
         properties: landlord.relationships.properties.data,
         rating: formatRating(landlord.attributes.rating)
-      })
+      }
+
+      stateCopy = Object.assign({}, state)
+      stateCopy[newLandlord.id] = newLandlord
+
+      return stateCopy
 
     case "UPDATE_LANDLORD":
       // find the record and replace it with this returned JSON
