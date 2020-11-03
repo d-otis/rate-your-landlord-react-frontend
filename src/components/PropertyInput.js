@@ -32,7 +32,7 @@ const PropertyInput = props => {
   }
 
   const generateLandlordSelect = () => {
-    return landlords.map(landlord => <option key={landlord.id} value={landlord.id}>{landlord.name}</option>)
+    return Object.keys(landlords).map(id => <option value={landlords[id].id} key={id}>{landlords[id].name}</option>)
   }
 
   const handleSubmit = e => {
