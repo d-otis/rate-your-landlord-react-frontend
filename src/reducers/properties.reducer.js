@@ -12,17 +12,21 @@ export default function propertiesReducer(
     case 'SET_PROPERTIES':
       const properties = action.payload.data
 
-      return properties.map(property => {
-        return({
-          id: property.id,
-          address: property.attributes.address,
-          reviews: property.relationships.reviews.data,
-          landlordId: property.attributes.landlord_id,
-          imageUrl: property.attributes.image_url,
-          hasImage: property.attributes.has_image,
-          rating: formatRating(property.attributes.rating)
-        })
-      })
+      return {
+        ...state,
+        ...properties.reduce((newObj, eleObj) => {
+          newObj[eleObj.id] = {
+            id: eleObj.id,
+            address: eleObj.attributes.address,
+            reviews: eleObj.relationships.reviews.data,
+            landlordId: eleObj.attributes.landlord_id,
+            imageUrl: eleObj.attributes.image_url,
+            hasImage: eleObj.attributes.has_image,
+            rating: formatRating(eleObj.attributes.rating)
+          }
+          return newObj
+        }, {})
+      }
 
     case "ADD_PROPERTY":
       propertyJSON = action.payload.data
