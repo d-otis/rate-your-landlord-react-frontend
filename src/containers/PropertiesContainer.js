@@ -3,12 +3,14 @@ import { connect } from 'react-redux'
 import PropertyInput from '../components/PropertyInput'
 import Properties from '../components/Properties'
 import { fetchProperties, createProperty } from '../actions/properties.actions'
+import { fetchReviews } from '../actions/reviews.actions'
 import { createLandlord } from '../actions/landlords.actions'
 
 class PropertiesContainer extends Component {
 
   componentDidMount() {
     this.props.fetchProperties()
+    this.props.fetchReviews()
   }
 
   render() {
@@ -31,4 +33,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchProperties, createProperty, createLandlord })(PropertiesContainer)
+export default connect(mapStateToProps, { fetchProperties, createProperty, createLandlord, fetchReviews })(PropertiesContainer)
