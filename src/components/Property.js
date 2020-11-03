@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ReviewInput from './ReviewInput'
+import Button from 'react-bootstrap/Button'
 
 const Property = ({ match, properties, landlords }) => {
 
@@ -28,8 +29,9 @@ const Property = ({ match, properties, landlords }) => {
        </ul>
        {showReviewInput && <ReviewInput propertyId={propertyId} setShowReviewInput={setShowReviewInput} />}
        
-       {showReviewInput || <button onClick={toggleShowReviewInput}>Leave a Review</button>}
-       {showReviewInput && <button onClick={toggleShowReviewInput}> Cancel </button>}
+       {showReviewInput || <Button variant="secondary" onClick={toggleShowReviewInput}>Leave a Review</Button>}
+       {showReviewInput && <Button variant="secondary" onClick={toggleShowReviewInput}> Cancel </Button>}
+
      </React.Fragment>
     )
   }
