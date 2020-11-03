@@ -11,9 +11,7 @@ function Landlord({ landlord, deleteLandlord }) {
           name, 
           properties, 
           reviews, 
-          rating, 
-          updateLandlord, 
-          deleteLandlord } = props
+          rating } = landlord
 
   const handleEditClick = () => {
     setToggleEdit(!toggleEdit)
