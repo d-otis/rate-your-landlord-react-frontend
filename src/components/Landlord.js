@@ -27,7 +27,7 @@ function Landlord({ landlord, deleteLandlord }) {
       <h3>Rating: {rating}</h3>
       <h3>Properties:</h3>
 
-      {properties.length > 0 
+      {properties?.length > 0 
         ? 
           <ol>
             {properties.map((property, idx) => <li key={property.id}>Property ID : {property.id}</li>)}
@@ -36,7 +36,7 @@ function Landlord({ landlord, deleteLandlord }) {
       }
 
       <h3>Reviews:</h3>
-      {reviews.length > 0 
+      {reviews?.length > 0 
         ?
           <ol>
             {reviews.map((review, idx) => <li key={review.id}>Review ID : {review.id}</li>)}
