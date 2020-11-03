@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { createLandlord } from '../actions/landlords.actions'
+import { connect } from 'react-redux'
 
-const LandlordInput = (props) => {
+const LandlordInput = ({ createLandlord }) => {
 
   const [name, setName] = useState('')
-
-  const { createLandlord } = props
 
   const handleChange = e => {
     setName(e.target.value)
@@ -40,4 +40,4 @@ const LandlordInput = (props) => {
   )
 }
 
-export default LandlordInput
+export default connect(null, { createLandlord })(LandlordInput)
