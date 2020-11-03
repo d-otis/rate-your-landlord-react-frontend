@@ -7,11 +7,11 @@ const Property = ({ match, properties, landlords }) => {
 
   const [ showReviewInput, setShowReviewInput ] = useState(false)
 
-  const property = properties.filter(property => property.id === propertyId)[0]
+  const property = properties[propertyId]
   
   const getLandlordName = id => {
-    let idx = landlords.findIndex(landlord => landlord.id === id)
-    return idx !== -1 ? landlords[idx].name : ""
+    const landlord = landlords[id]
+    return landlord?.name
   }
 
   const toggleShowReviewInput = () => setShowReviewInput(!showReviewInput)
