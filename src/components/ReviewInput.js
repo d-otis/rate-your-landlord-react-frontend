@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { createReview } from '../actions/reviews.actions'
+import Button from 'react-bootstrap/Button'
 
 const ReviewInput = ({ propertyId, createReview, setShowReviewInput }) => {
 
@@ -36,7 +37,7 @@ const ReviewInput = ({ propertyId, createReview, setShowReviewInput }) => {
       <br />
       <input type="range" min="1" max="5" id="rating-range" onChange={handleRatingChange} /> {rating}
       <br />
-      <input type="submit" value="Save Review" />
+      <Button variant="secondary" type="submit"> Save Review </Button>
       </form>
     </div>
   )
