@@ -12,7 +12,7 @@ class LandlordsContainer extends Component {
 
   render() {
 
-    const { landlords, fetchLandlords } = this.props
+    const { landlords } = this.props
     
     return (
       <div>
