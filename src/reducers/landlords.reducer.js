@@ -8,8 +8,9 @@ export default function landlordsReducer(
   let landlord
   switch (action.type) {
     case 'LOADING_LANDLORDS':
-    console.log('LOADING_LANDLORDS', action)
+
       return state
+
     case 'SET_LANDLORDS':
       const landlords = action.payload.data
       console.log('SET_LANDLORDS', action)
