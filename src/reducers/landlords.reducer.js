@@ -7,8 +7,6 @@ export default function landlordsReducer(
 ) {
   let landlord
   let stateCopy
-  let newRating
-  let propertyId
   let landlordId
   switch (action.type) {
     case 'LOADING_LANDLORDS':
