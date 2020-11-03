@@ -49,15 +49,15 @@ export default function landlordsReducer(
       // find the record and replace it with this returned JSON
       const index = state.findIndex(landlord => landlord.id === action.payload.data.id)
 
-      landlord = action.payload.data
+    landlord = action.payload.data
 
-      const updatedLandlord = {
-        id: landlord.id, 
-        name: landlord.attributes.name, 
-        reviews: landlord.relationships.reviews.data, 
-        properties: landlord.relationships.properties.data,
-        rating: landlord.attributes.rating
-      }
+    const updatedLandlord = {
+      id: landlord.id, 
+      name: landlord.attributes.name, 
+      reviews: landlord.relationships.reviews.data, 
+      properties: landlord.relationships.properties.data,
+      rating: landlord.attributes.rating
+    }
 
       stateCopy = Object.assign({}, state)
 
