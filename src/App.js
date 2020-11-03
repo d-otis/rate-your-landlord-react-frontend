@@ -16,11 +16,11 @@ class App extends Component {
       this.fetchAll()
     }
 
-    fetchAll = () => {
-      this.props.fetchLandlords()
-      this.props.fetchProperties()
-      this.props.fetchReviews()
-    }
+  fetchAll = () => {
+    this.props.fetchLandlords()
+    this.props.fetchProperties()
+    this.props.fetchReviews()
+  }
 
     render() {
       const { landlords } = this.props
