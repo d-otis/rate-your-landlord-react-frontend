@@ -46,6 +46,18 @@ export default function propertiesReducer(
 
       return stateCopy
 
+    case "ADD_REVIEW":
+      let reviewId = action.payload.data.id
+      let propertyId = action.payload.data.attributes.property_id
+      let propertyRating = formatRating(action.payload.data.attributes.property_rating)
+      
+      stateCopy = Object.assign({}, state)
+
+      stateCopy[propertyId].rating = propertyRating
+      stateCopy[propertyId].reviews.concat({id: reviewId, type: "review"})
+
+      return stateCopy
+
     default:
       return state
   }
