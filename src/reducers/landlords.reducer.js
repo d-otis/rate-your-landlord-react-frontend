@@ -59,11 +59,11 @@ export default function landlordsReducer(
         rating: landlord.attributes.rating
       }
 
-      return [
-        ...state.slice(0, index), 
-        updatedLandlord, 
-        ...state.slice(index + 1)
-      ]
+      stateCopy = Object.assign({}, state)
+
+      stateCopy[landlord.id] = updatedLandlord
+
+      return stateCopy
 
     case "DELETE_LANDLORD":
       let deletedLandlordId = action.payload.data.id
