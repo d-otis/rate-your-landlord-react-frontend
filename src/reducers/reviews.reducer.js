@@ -2,6 +2,7 @@ export default function reviewsReducer(
   state = {},
   action
   ) {
+  let stateCopy
   switch (action.type) {
     case 'LOADING_REVIEWS':
       return state
@@ -23,12 +24,17 @@ export default function reviewsReducer(
     case 'ADD_REVIEW':
       const review = action.payload.data
       
-      return state.concat({
+      let newReview = {
         id: review.id,
         content: review.attributes.content,
-        rating: review.attributes.rating,
-        propertyId: review.attributes.property_id
-      })
+        rating: review.attributes.rating
+      }
+
+      stateCopy = Object.assign({}, state)
+      stateCopy[newReview.id] = newReview
+
+      return stateCopy
+
     default:
       return state
   }
