@@ -2,13 +2,8 @@ import React, { Component } from 'react'
 import Landlords from '../components/Landlords'
 import LandlordInput from '../components/LandlordInput'
 import { connect } from 'react-redux'
-import { fetchLandlords } from '../actions/landlords.actions'
 
 class LandlordsContainer extends Component {
-
-  componentDidMount() {
-    this.props.fetchLandlords()
-  }
 
   render() {
 
@@ -29,4 +24,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { fetchLandlords })(LandlordsContainer)
+export default connect(mapStateToProps)(LandlordsContainer)
