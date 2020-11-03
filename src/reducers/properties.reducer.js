@@ -1,7 +1,7 @@
 import { formatRating } from '../utils/misc.util'
 
 export default function propertiesReducer(
-  state = [],
+  state = {},
   action
 ) {
   let propertyJSON
