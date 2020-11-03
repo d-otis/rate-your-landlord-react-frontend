@@ -4,8 +4,7 @@ import { connect } from 'react-redux'
 
 const LandlordEditForm = ({ name: landlordName, setToggleEdit, updateLandlord, id }) => {
 
-  const [ name, setName ] = useState(props.name)
-  const { setToggleEdit, updateLandlord, id } = props
+  const [ name, setName ] = useState(landlordName)
 
   const handleSubmit = e => {
     e.preventDefault()
