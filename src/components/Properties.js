@@ -7,8 +7,7 @@ const Properties = ({ properties, landlords }) => {
   let { path } = useRouteMatch()
 
   const generatePropertiesList = () => {
-    // return properties.map(property => <Property key={property.id} {...property} landlords={landlords} />)
-    return properties.map(property => <li key={property.id}><Link to={`/properties/${property.id}`} > {property.address} </Link></li>)
+    return Object.keys(properties).map(id=> <li key={id}><Link to={`/properties/${id}`}> {properties[id].address} </Link></li>)
   }
 
   return(
