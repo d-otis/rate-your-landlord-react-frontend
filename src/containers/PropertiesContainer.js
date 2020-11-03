@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropertyInput from '../components/PropertyInput'
 import Properties from '../components/Properties'
-import { createProperty } from '../actions/properties.actions'
+import { fetchProperties, createProperty } from '../actions/properties.actions'
 import { createLandlord } from '../actions/landlords.actions'
 
 class PropertiesContainer extends Component {
@@ -26,4 +26,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { createProperty, createLandlord })(PropertiesContainer)
+export default connect(mapStateToProps, { fetchProperties, createProperty, createLandlord })(PropertiesContainer)
