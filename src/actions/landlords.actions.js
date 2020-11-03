@@ -37,7 +37,7 @@ export function fetchLandlords() {
     },
     body: JSON.stringify({landlord: {name: name}})
   }
-  // debugger
+
   return dispatch => {
     fetch(`${BASE_URL}/landlords/${landlordId}`, config)
       .then(res => res.json())
