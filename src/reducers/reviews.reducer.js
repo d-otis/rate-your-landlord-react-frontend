@@ -1,5 +1,5 @@
 export default function reviewsReducer(
-  state =[],
+  state = {},
   action
   ) {
   switch (action.type) {
@@ -8,13 +8,18 @@ export default function reviewsReducer(
     case 'SET_REVIEWS':
       const reviews = action.payload.data
 
-      return reviews.map(review => {
-        return ({
-          id: review.id,
-          content: review.attributes.content,
-          rating: review.attributes.rating
-        })
-      })
+      return {
+        ...state,
+        ...reviews.reduce((newObj, eleObj) => {
+          newObj[eleObj.id] = {
+            id: eleObj.id,
+            content: eleObj.attributes.content,
+            rating: eleObj.attributes.rating
+          }
+          return newObj
+        }, {})
+      }
+
     case 'ADD_REVIEW':
       const review = action.payload.data
       
