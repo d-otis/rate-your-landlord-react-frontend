@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { updateLandlord, deleteLandlord } from '../actions/landlords.actions'
+import { connect } from 'react-redux'
 import LandlordEditForm from './LandlordEditForm'
 
-function Landlord(props) {
+function Landlord({ landlord, deleteLandlord }) {
 
   const [ toggleEdit, setToggleEdit ] = useState(false)
 
@@ -49,4 +51,4 @@ function Landlord(props) {
   )
 }
 
-export default Landlord
+export default connect(null, { updateLandlord, deleteLandlord })(Landlord)
