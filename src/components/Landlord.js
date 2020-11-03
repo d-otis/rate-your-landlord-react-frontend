@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { updateLandlord, deleteLandlord } from '../actions/landlords.actions'
+import { deleteLandlord } from '../actions/landlords.actions'
 import { connect } from 'react-redux'
 import LandlordEditForm from './LandlordEditForm'
 
@@ -23,7 +23,7 @@ function Landlord({ landlord, deleteLandlord }) {
       <h2>{name} <button onClick={() => deleteLandlord(id)}>X</button></h2>
       <button onClick={handleEditClick} >Edit Landlord</button>
       <br />
-      {toggleEdit && <LandlordEditForm name={name} updateLandlord={updateLandlord} id={id} setToggleEdit={setToggleEdit} />}
+      {toggleEdit && <LandlordEditForm name={name} id={id} setToggleEdit={setToggleEdit} />}
       <h3>Rating: {rating}</h3>
       <h3>Properties:</h3>
 
@@ -49,4 +49,4 @@ function Landlord({ landlord, deleteLandlord }) {
   )
 }
 
-export default connect(null, { updateLandlord, deleteLandlord })(Landlord)
+export default connect(null, { deleteLandlord })(Landlord)
