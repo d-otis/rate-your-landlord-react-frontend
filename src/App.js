@@ -6,8 +6,13 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LandlordsContainer from './containers/LandlordsContainer'
 import PropertiesContainer from './containers/PropertiesContainer'
+import { fetchLandlords } from './actions/landlords.actions'
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchLandlords()
+  }
 
     render() {
       return (
@@ -25,4 +30,4 @@ class App extends Component {
 
 const mapStateToProps = state => state
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { fetchLandlords })(App);
