@@ -7,18 +7,12 @@ class LandlordsContainer extends Component {
 
   render() {
 
-    const { landlords, createLandlord, updateLandlord, deleteLandlord } = this.props
-
+    const { landlords } = this.props
+    
     return (
       <div>
-        <LandlordInput 
-          createLandlord={createLandlord}
-        />
-        <Landlords 
-          landlords={landlords} 
-          updateLandlord={updateLandlord}
-          deleteLandlord={deleteLandlord}  
-        />
+        <LandlordInput />
+        <Landlords landlords={landlords} />
       </div>
     )
   }
