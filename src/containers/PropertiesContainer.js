@@ -6,6 +6,11 @@ import { fetchProperties, createProperty } from '../actions/properties.actions'
 import { createLandlord } from '../actions/landlords.actions'
 
 class PropertiesContainer extends Component {
+
+  componentDidMount() {
+    this.props.fetchProperties()
+  }
+
   render() {
 
     const { properties, createProperty, editProperty, deleteProperty, landlords, createLandlord } = this.props
