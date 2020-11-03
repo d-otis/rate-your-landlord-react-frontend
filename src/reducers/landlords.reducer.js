@@ -76,20 +76,15 @@ export default function landlordsReducer(
       return stateCopy
 
     case "ADD_REVIEW":
-    // update landlord's rating on frontend
-    // in response to new rating
-    // make array of landlord keys
-    // map through them to get to properties where
+      landlordId = action.payload.data.attributes.landlord_id
+      let landlordRating = formatRating(action.payload.data.attributes.landlord_rating)
+      let reviewId = action.payload.data.id
+      
+      stateCopy = Object.assign({}, state)
+      stateCopy[landlordId].rating = landlordRating
+      stateCopy[landlordId].reviews.concat({id: reviewId, type: "review"})
 
-    newRating = action.payload.data.attributes.rating
-    propertyId = action.payload.data.attributes.property_id
-    landlordId = action.payload.data.attributes.landlord_id
-    let landlordRating = formatRating(action.payload.data.attributes.landlord_rating)
-    
-    stateCopy = Object.assign({}, state)
-    stateCopy[landlordId].rating = landlordRating
-
-    return stateCopy
+      return stateCopy
 
     default:
       return state
