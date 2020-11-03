@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Landlord from '../components/Landlord'
 
-class Landlords extends Component {
+const Landlords = ({ landlords, updateLandlord, deleteLandlord }) => {
 
   render() {
 
