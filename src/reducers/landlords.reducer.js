@@ -13,17 +13,20 @@ export default function landlordsReducer(
 
     case 'SET_LANDLORDS':
       const landlords = action.payload.data
-      console.log('SET_LANDLORDS', action)
-      return landlords.map(landlord => {
-        // refactor this repeated code
-        return ({
-          id: landlord.id, 
-          name: landlord.attributes.name, 
-          reviews: landlord.relationships.reviews.data, 
-          properties: landlord.relationships.properties.data,
-          rating: formatRating(landlord.attributes.rating)
-        })
-      })
+
+      return {
+        ...state,
+        ...landlords.reduce((newObj, eleObj) => {
+          newObj[eleObj.id] = {
+            id: eleObj.id,
+            name: eleObj.attributes.name,
+            rating: formatRating(eleObj.attributes.rating),
+            reviews: eleObj.relationships.reviews.data,
+            properties: eleObj.relationships.properties.data
+          }
+          return newObj
+        }, {})
+      }
 
     case "ADD_LANDLORD":
       // const landlord = action.payload.data
