@@ -67,8 +67,12 @@ export default function landlordsReducer(
 
     case "DELETE_LANDLORD":
       let deletedLandlordId = action.payload.data.id
+      stateCopy =  Object.assign({}, state)
+
+      delete stateCopy[deletedLandlordId]
       
-      return state.filter(landlord => landlord.id !== deletedLandlordId)
+      return stateCopy
+
     default:
       return state
   }
