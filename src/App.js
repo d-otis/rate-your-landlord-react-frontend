@@ -10,8 +10,6 @@ import PropertiesContainer from './containers/PropertiesContainer'
 class App extends Component {
 
     render() {
-      const { landlords } = this.props
-      // debugger
       return (
         <Router>
           <NavBar />
