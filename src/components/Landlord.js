@@ -19,7 +19,7 @@ function Landlord({ landlord, deleteLandlord }) {
 
 
   return (
-    <div key={id}>
+    <div>
       <h2>{name} <button onClick={() => deleteLandlord(id)}>X</button></h2>
       <button onClick={handleEditClick} >Edit Landlord</button>
       <br />
