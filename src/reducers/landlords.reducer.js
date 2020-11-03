@@ -6,6 +6,7 @@ export default function landlordsReducer(
   action
 ) {
   let landlord
+  let stateCopy
   switch (action.type) {
     case 'LOADING_LANDLORDS':
 
