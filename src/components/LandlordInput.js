@@ -20,7 +20,7 @@ const LandlordInput = ({ createLandlord }) => {
   }
 
   return (
-    <Form onSubmit={handleSubmit} >
+    <Form onSubmit={handleSubmit} className="mb-4">
       <Form.Group>
         <Form.Label htmlFor="landlord-name">Create a Landlord</Form.Label>
         <br />
