@@ -1,0 +1,24 @@
+import React from 'react'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
+const ReviewsList = ({ property }) => {
+  return(
+    <Container className="mt-5">
+      <Row className="bg-light rounded-lg pt-3 border mb-3"> {/*Review Outer Row*/}
+        <Col> {/*Review Inner Column*/}
+          <Container className="inner-review-container"> {/*Review Inner Container*/}
+            <Row> {/*Review Inner Row*/}
+              <Col> {/*Review Rating Column*/}
+                <h1><span className="bg-secondary text-white p-2 rounded-lg">5.0</span></h1>
+              </Col> {/*Review Rating Column*/}
+            </Row> {/*Review Inner Row*/}
+          </Container> {/*Review Inner Container*/}
+        </Col> {/*Review Inner Column*/}
+      </Row> {/*Review Outer Row*/}
+    </Container>
+  )
+}
+
+export default ReviewsList
