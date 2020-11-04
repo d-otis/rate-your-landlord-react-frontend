@@ -32,17 +32,22 @@ const ReviewInput = ({ propertyId, createReview, setShowReviewInput }) => {
   }
 
   return(
-    <div>
-      <form onSubmit={handleSubmit}>
-        <textarea name="" id="" cols="30" rows="5" onChange={handleContentChange} value={content}></textarea>
-      <br />
-      <label htmlFor="rating-range">Select a Rating</label>
-      <br />
-      <input type="range" min="1" max="5" id="rating-range" onChange={handleRatingChange} /> {rating}
-      <br />
-      <Button variant="secondary" type="submit"> Save Review </Button>
-      </form>
-    </div>
+    <Container>
+    <Row>
+      <Col sm={12}>
+        <form onSubmit={handleSubmit}>
+          <textarea name="" id="" cols="30" rows="5" onChange={handleContentChange} value={content}></textarea>
+        <br />
+        <label htmlFor="rating-range">Select a Rating</label>
+        <br />
+        <input type="range" min="1" max="5" id="rating-range" onChange={handleRatingChange} /> {rating}
+        <br />
+        <Button variant="secondary" type="submit"> Save Review </Button>
+        </form>
+      </Col>
+    </Row>
+
+    </Container>
   )
 }
 
