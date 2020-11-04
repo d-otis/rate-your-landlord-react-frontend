@@ -34,7 +34,7 @@ function Landlord({ landlord, deleteLandlord, properties }) {
           <h3>{rating}</h3>
           {toggleEdit && <LandlordEditForm name={name} id={id} setToggleEdit={setToggleEdit} />}
         </Col>
-        <Col sm={8} className="border">
+        <Col sm={8} className="border py-4">
           <ul>
             {properties.map(property => <li key={property.id}>{generatePropertyLink(property)}</li>)}
           </ul>
