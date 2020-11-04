@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { deleteLandlord } from '../actions/landlords.actions'
 import { connect } from 'react-redux'
 import LandlordEditForm from './LandlordEditForm'
+import { Link } from 'react-router-dom'
 
 function Landlord({ landlord, deleteLandlord }) {
 
@@ -17,6 +18,10 @@ function Landlord({ landlord, deleteLandlord }) {
     setToggleEdit(!toggleEdit)
   }
 
+  const generatePropertyLink = propertyId => {
+    return <Link to={`/properties/${propertyId}`}>{propertyId}</Link>
+  }
+
 
   return (
     <div>
@@ -30,7 +35,7 @@ function Landlord({ landlord, deleteLandlord }) {
       {properties?.length > 0 
         ? 
           <ol>
-            {properties.map((property, idx) => <li key={property.id}>Property ID : {property.id}</li>)}
+            {properties.map((property, idx) => <li key={property.id}>Property ID : {generatePropertyLink(property.id)}</li>)}
           </ol>
         : 'doesnt have properties'
       }
