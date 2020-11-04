@@ -54,7 +54,11 @@ export default function propertiesReducer(
       stateCopy = Object.assign({}, state)
 
       stateCopy[propertyId].rating = propertyRating
-      stateCopy[propertyId].reviews.concat({id: reviewId, type: "review"})
+
+      stateCopy[propertyId].reviews = [
+        ...stateCopy[propertyId].reviews,
+        {id: reviewId, type: "review"}
+      ]
 
       return stateCopy
 
