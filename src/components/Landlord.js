@@ -5,6 +5,7 @@ import LandlordEditForm from './LandlordEditForm'
 import { Link } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 
 function Landlord({ landlord, deleteLandlord, properties }) {
 
