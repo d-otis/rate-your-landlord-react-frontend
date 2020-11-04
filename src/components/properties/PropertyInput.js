@@ -1,14 +1,6 @@
 import React, { useState } from 'react'
 
 const PropertyInput = props => {
-  // needs to have select box of landlords
-  // input for address
-  // BONUS: allow for creation of landlord (which will need to be passed in as props from container)
-
-  // postObj = {
-  //   address: '1234 Main St ETC',
-  //   landlordId: 1385919387127983
-  // }
 
   const { createProperty, landlords, createLandlord, fetchProperties } = props
 
