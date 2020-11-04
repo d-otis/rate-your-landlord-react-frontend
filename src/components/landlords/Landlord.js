@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { deleteLandlord } from '../actions/landlords.actions'
+import { deleteLandlord } from '../../actions/landlords.actions'
 import { connect } from 'react-redux'
 import LandlordEditForm from './LandlordEditForm'
 import { Link } from 'react-router-dom'

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { updateLandlord } from '../actions/landlords.actions'
+import { updateLandlord } from '../../actions/landlords.actions'
 import { connect } from 'react-redux'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'

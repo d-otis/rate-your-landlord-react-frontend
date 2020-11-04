@@ -1,5 +1,5 @@
 import React from 'react'
-import Landlord from '../components/Landlord'
+import Landlord from './Landlord'
 import { connect } from 'react-redux'
 
 const Landlords = ({ landlords, updateLandlord, deleteLandlord, properties }) => {

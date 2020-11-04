@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Landlords from '../components/Landlords'
-import LandlordInput from '../components/LandlordInput'
+import Landlords from '../components/landlords/Landlords'
+import LandlordInput from '../components/landlords/LandlordInput'
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import ReviewInput from './ReviewInput'
-import ReviewsList from './ReviewsList'
+import ReviewInput from '../reviews/ReviewInput'
+import ReviewsList from '../reviews/ReviewsList'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
