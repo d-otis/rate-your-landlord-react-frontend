@@ -12,7 +12,7 @@ const Review = ({ review }) => {
         <Col> {/*Review Inner Column*/}
           <Container className="inner-review-container"> {/*Review Inner Container*/}
             <Row> {/*Review Inner Row*/}
-              <Col> {/*Review Rating Column*/}
+              <Col sm={2} className="review-rating text-center mt-3"> {/*Review Rating Column*/}
                 <h1><span className="bg-secondary text-white p-2 rounded-lg">{review?.rating}</span></h1>
               </Col> {/*Review Rating Column*/}
             </Row> {/*Review Inner Row*/}
