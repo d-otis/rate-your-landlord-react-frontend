@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Form from 'react-bootstrap/Form'
 
 const ReviewInput = ({ propertyId, createReview, setShowReviewInput }) => {
 
@@ -34,7 +35,7 @@ const ReviewInput = ({ propertyId, createReview, setShowReviewInput }) => {
     <Container>
     <Row>
       <Col sm={12}>
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <textarea name="" id="" cols="30" rows="5" onChange={handleContentChange} value={content}></textarea>
         <br />
         <label htmlFor="rating-range">Select a Rating</label>
@@ -42,7 +43,8 @@ const ReviewInput = ({ propertyId, createReview, setShowReviewInput }) => {
         <input type="range" min="1" max="5" id="rating-range" onChange={handleRatingChange} /> {rating}
         <br />
         <Button variant="secondary" type="submit"> Save Review </Button>
-        </form>
+        <Button variant="secondary ml-3" onClick={toggleShowReviewInput}> Cancel </Button>
+        </Form>
       </Col>
     </Row>
 
