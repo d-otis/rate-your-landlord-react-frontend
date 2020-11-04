@@ -7,11 +7,13 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LandlordsContainer from './containers/LandlordsContainer'
 import PropertiesContainer from './containers/PropertiesContainer'
 import { fetchLandlords } from './actions/landlords.actions'
+import { fetchProperties } from './actions/properties.actions'
 
 class App extends Component {
 
   componentDidMount() {
     this.props.fetchLandlords()
+    this.props.fetchProperties()
   }
 
     render() {
@@ -30,4 +32,4 @@ class App extends Component {
 
 const mapStateToProps = state => state
 
-export default connect(mapStateToProps, { fetchLandlords })(App);
+export default connect(mapStateToProps, { fetchLandlords, fetchProperties })(App);
