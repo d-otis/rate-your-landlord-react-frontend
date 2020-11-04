@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import Landlords from '../components/Landlords'
 import LandlordInput from '../components/LandlordInput'
 import { connect } from 'react-redux'
