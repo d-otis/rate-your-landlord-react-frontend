@@ -81,7 +81,7 @@ const Property = ({ match, properties, landlords }) => {
 
       {/*<!-- Property Show Container -->*/}
      </Container> 
-     {showReviewInput && <ReviewInput propertyId={propertyId} setShowReviewInput={setShowReviewInput} />}
+     {showReviewInput && <ReviewInput propertyId={propertyId} setShowReviewInput={setShowReviewInput} toggleShowReviewInput={toggleShowReviewInput} />}
      <ReviewsList property={property} />
      </React.Fragment>
     )
