@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 
-const ReviewInput = ({ propertyId, createReview, setShowReviewInput }) => {
+const ReviewInput = ({ propertyId, createReview, setShowReviewInput, toggleShowReviewInput }) => {
 
   const [ content, setContent ] = useState('')
   const [ rating, setRating ] = useState(5)
