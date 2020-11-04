@@ -15,8 +15,8 @@ const LandlordsContainer = ({ landlords }) => {
   
   return (
     <Container>
-      <Button variant="secondary" onClick={toggleLandlordInput} className="mb-3">Add a Landlord</Button>
-      {showLandlordInput && <LandlordInput />}
+      {showLandlordInput || <Button variant="secondary" onClick={toggleLandlordInput} className="mb-3">Add a Landlord</Button>}
+      {showLandlordInput && <LandlordInput toggleLandlordInput={toggleLandlordInput} />}
       <Landlords landlords={landlords} />
     </Container>
   )
