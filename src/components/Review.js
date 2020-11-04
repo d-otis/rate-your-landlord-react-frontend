@@ -8,7 +8,6 @@ const Review = ({ review }) => {
 
 
   return(
-    <React.Fragment>
       <Row className="bg-light rounded-lg pt-3 border mb-3"> {/*Review Outer Row*/}
         <Col> {/*Review Inner Column*/}
           <Container className="inner-review-container"> {/*Review Inner Container*/}
@@ -19,9 +18,8 @@ const Review = ({ review }) => {
             </Row> {/*Review Inner Row*/}
           </Container> {/*Review Inner Container*/}
         </Col> {/*Review Inner Column*/}
-      </Row> {/*Review Outer Row*/}
-    </React.Fragment>
-
+       {/*Review Outer Row*/}
+      </Row> 
   )
 }
 
