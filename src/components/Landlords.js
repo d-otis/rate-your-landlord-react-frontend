@@ -1,5 +1,6 @@
 import React from 'react'
 import Landlord from '../components/Landlord'
+import Container from 'react-bootstrap/Container'
 
 const Landlords = ({ landlords, updateLandlord, deleteLandlord }) => {
 
@@ -19,9 +20,10 @@ const Landlords = ({ landlords, updateLandlord, deleteLandlord }) => {
 
   return (
     <div>
-      <h1>Landlords Index</h1>
-      <hr />
-      {generateLandlords()}
+      <Container>
+        {generateLandlords()}
+      </Container>
+
     </div>
   )
 }
