@@ -37,7 +37,7 @@ const Property = ({ match, properties, landlords }) => {
       </Row>
       <Row>
         <Col sm={8}> {/*Property Photo Column*/}
-          <img className="rounded-lg" src="https://images.unsplash.com/photo-1536376072261-38c75010e6c9" width="100%" />
+          <img className="rounded-lg" src="https://images.unsplash.com/photo-1536376072261-38c75010e6c9" width="100%" alt="" />
         </Col> {/*Property Photo Column*/}
         <Col sm={4} className="bg-light text-center rounded-lg border" > {/*Landlord Meta Column*/}
 
