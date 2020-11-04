@@ -9,7 +9,6 @@ import { createLandlord } from '../actions/landlords.actions'
 class PropertiesContainer extends Component {
 
   componentDidMount() {
-    this.props.fetchProperties()
     this.props.fetchReviews()
   }
 
