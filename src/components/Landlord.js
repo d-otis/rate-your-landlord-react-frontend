@@ -32,40 +32,16 @@ function Landlord({ landlord, deleteLandlord, properties }) {
         <Col sm={4} className="border text-center py-4">
           <h2>{name}</h2>
           <h3>{rating}</h3>
+          {toggleEdit && <LandlordEditForm name={name} id={id} setToggleEdit={setToggleEdit} />}
         </Col>
         <Col sm={8} className="border">
           <ul>
             {properties.map(property => <li key={property.id}>{property.address}</li>)}
           </ul>
+          <Button className="mr-2" variant="outline-secondary" onClick={handleEditClick} >Edit Landlord</Button>
+          <Button variant="outline-danger" onClick={() => deleteLandlord(id)}>Delete Landlord</Button>
         </Col>
       </Row>
-
-
-      <h2>{name} <button onClick={() => deleteLandlord(id)}>X</button></h2>
-      <button onClick={handleEditClick} >Edit Landlord</button>
-      <br />
-      {toggleEdit && <LandlordEditForm name={name} id={id} setToggleEdit={setToggleEdit} />}
-      <h3>Rating: {rating}</h3>
-      <h3>Properties:</h3>
-
-      {properties?.length > 0 
-        ? 
-          <ol>
-            {properties.map((property, idx) => <li key={property.id}>Property ID : {generatePropertyLink(property.id)}</li>)}
-          </ol>
-        : 'doesnt have properties'
-      }
-
-      <h3>Reviews:</h3>
-      {reviews?.length > 0 
-        ?
-          <ol>
-            {reviews.map((review, idx) => <li key={review.id}>Review ID : {review.id}</li>)}
-          </ol>
-        : "doesn't have any reviews"
-      }
-     
-      <hr />
     </div>
   )
 }
