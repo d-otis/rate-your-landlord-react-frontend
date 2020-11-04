@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const LandlordInput = ({ createLandlord }) => {
+const LandlordInput = ({ createLandlord, toggleLandlordInput }) => {
 
   const [name, setName] = useState('')
 
@@ -16,6 +16,7 @@ const LandlordInput = ({ createLandlord }) => {
     e.preventDefault()
     console.log("here's the name", name)
     createLandlord({name: name})
+    toggleLandlordInput()
     setName('')
   }
 
@@ -34,7 +35,7 @@ const LandlordInput = ({ createLandlord }) => {
         />
       </Form.Group>
       <Button type="submit">Create Landlord</Button>
-      <Button className="ml-3" variant="secondary">Cancel</Button>
+      <Button onClick={toggleLandlordInput} className="ml-3" variant="secondary">Cancel</Button>
     </Form>
   )
 }
