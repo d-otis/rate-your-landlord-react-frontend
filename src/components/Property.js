@@ -53,7 +53,7 @@ const Property = ({ match, properties, landlords }) => {
             <Row className="my-5"> {/*Rating Row*/}
               <Col className="landlord-rating"> {/*Landlord Rating Column*/}
 
-                <h1><span className="bg-secondary text-white rounded-lg p-2">XX</span></h1>
+                <h1><span className="bg-secondary text-white rounded-lg p-2">{getLandlordRating(property.landlordId)}</span></h1>
 
                 <small><em>landlord rating</em></small>
               </Col> {/*Landlord Rating Column*/}
