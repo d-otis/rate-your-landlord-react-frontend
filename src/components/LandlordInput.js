@@ -34,6 +34,7 @@ const LandlordInput = ({ createLandlord }) => {
         />
       </Form.Group>
       <Button type="submit">Create Landlord</Button>
+      <Button className="ml-3" variant="secondary">Cancel</Button>
     </Form>
   )
 }
