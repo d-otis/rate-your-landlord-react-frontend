@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Landlords from '../components/Landlords'
 import LandlordInput from '../components/LandlordInput'
 import { connect } from 'react-redux'
+import Container from 'react-bootstrap/Container'
 
 class LandlordsContainer extends Component {
 
@@ -10,10 +11,10 @@ class LandlordsContainer extends Component {
     const { landlords } = this.props
     
     return (
-      <div>
+      <Container>
         <LandlordInput />
         <Landlords landlords={landlords} />
-      </div>
+      </Container>
     )
   }
 }
