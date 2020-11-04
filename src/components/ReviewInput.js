@@ -36,12 +36,14 @@ const ReviewInput = ({ propertyId, createReview, setShowReviewInput, toggleShowR
     <Row>
       <Col sm={12}>
         <Form onSubmit={handleSubmit}>
-          <textarea name="" id="" cols="30" rows="5" onChange={handleContentChange} value={content}></textarea>
-        <br />
-        <label htmlFor="rating-range">Select a Rating</label>
-        <br />
-        <input type="range" min="1" max="5" id="rating-range" onChange={handleRatingChange} /> {rating}
-        <br />
+        <Form.Group controlId="review-form-group">
+          <Form.Label>Please leave a review</Form.Label>
+          <Form.Control as="textarea" onChange={handleContentChange} value={content} />
+        </Form.Group>
+        <Form.Group controlId="rating-range-input">
+          <Form.Label>Select a Rating: {rating}</Form.Label>
+          <Form.Control type="range" min="1" max="5" onChange={handleRatingChange} value={rating}/>
+        </Form.Group>
         <Button variant="secondary" type="submit"> Save Review </Button>
         <Button variant="secondary ml-3" onClick={toggleShowReviewInput}> Cancel </Button>
         </Form>
