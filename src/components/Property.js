@@ -76,7 +76,7 @@ const Property = ({ match, properties, landlords }) => {
         </Col> {/*Landlord Meta Column*/}
         
         
-        {showReviewInput && <Button variant="secondary" onClick={toggleShowReviewInput}> Cancel </Button>}
+        
       </Row>
 
       {/*<!-- Property Show Container -->*/}
