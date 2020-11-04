@@ -26,6 +26,20 @@ function Landlord({ landlord, deleteLandlord, properties }) {
 
   return (
     <div>
+
+      <Row>
+        <Col sm={4} className="border text-center">
+          <h2>{name}</h2>
+          <h3>{rating}</h3>
+        </Col>
+        <Col sm={8} className="border">
+          <ul>
+            {properties.map(property => <li key={property.id}>{property.address}</li>)}
+          </ul>
+        </Col>
+      </Row>
+
+
       <h2>{name} <button onClick={() => deleteLandlord(id)}>X</button></h2>
       <button onClick={handleEditClick} >Edit Landlord</button>
       <br />
