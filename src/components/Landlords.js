@@ -1,6 +1,7 @@
 import React from 'react'
 import Landlord from '../components/Landlord'
 import Container from 'react-bootstrap/Container'
+import { connect } from 'react-redux'
 
 const Landlords = ({ landlords, updateLandlord, deleteLandlord }) => {
 
@@ -23,9 +24,14 @@ const Landlords = ({ landlords, updateLandlord, deleteLandlord }) => {
       <Container>
         {generateLandlords()}
       </Container>
-
     </div>
   )
 }
 
-export default Landlords
+const mapStateToProps = state => {
+  return {
+    properties: state.properties
+  }
+}
+
+export default connect(mapStateToProps)(Landlords)
