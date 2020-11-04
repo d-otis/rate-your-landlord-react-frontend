@@ -3,6 +3,8 @@ import { deleteLandlord } from '../actions/landlords.actions'
 import { connect } from 'react-redux'
 import LandlordEditForm from './LandlordEditForm'
 import { Link } from 'react-router-dom'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 function Landlord({ landlord, deleteLandlord }) {
 
