@@ -11,11 +11,13 @@ const Landlords = ({ landlords, updateLandlord, deleteLandlord, properties }) =>
 
     return (
       Object.keys(landlords).map(id => {
+        const properties = propertyValues.filter(property => property.landlordId === id)
         return (
           <Landlord 
             key={id} 
             landlord={landlords[id]} 
-            deleteLandlord={deleteLandlord} 
+            deleteLandlord={deleteLandlord}
+            properties={properties}
           />
         )
       })
