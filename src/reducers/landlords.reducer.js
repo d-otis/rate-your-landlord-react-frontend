@@ -56,7 +56,7 @@ export default function landlordsReducer(
       name: landlord.attributes.name, 
       reviews: landlord.relationships.reviews.data, 
       properties: landlord.relationships.properties.data,
-      rating: landlord.attributes.rating
+      rating: formatRating(landlord.attributes.rating)
     }
 
       stateCopy = Object.assign({}, state)
