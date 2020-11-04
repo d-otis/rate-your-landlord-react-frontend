@@ -6,13 +6,12 @@ import { Link } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-function Landlord({ landlord, deleteLandlord }) {
+function Landlord({ landlord, deleteLandlord, properties }) {
 
   const [ toggleEdit, setToggleEdit ] = useState(false)
 
   const { id, 
-          name, 
-          properties, 
+          name,
           reviews, 
           rating } = landlord
 
