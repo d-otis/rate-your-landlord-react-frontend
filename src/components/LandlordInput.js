@@ -14,7 +14,6 @@ const LandlordInput = ({ createLandlord, toggleLandlordInput }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log("here's the name", name)
     createLandlord({name: name})
     toggleLandlordInput()
     setName('')
