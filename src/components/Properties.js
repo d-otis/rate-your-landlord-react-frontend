@@ -15,7 +15,10 @@ const Properties = ({ properties, landlords }) => {
       {generatePropertiesList()}
 
       <Switch>
-        <Route path={`${path}/:propertyId`} render={routerProps => <Property {...routerProps} properties={properties} landlords={landlords} />} />
+        <Route 
+          path={`${path}/:propertyId`} 
+          render={routerProps => <Property {...routerProps} properties={properties} landlords={landlords} />} 
+        />
       </Switch>
 
     </div>
