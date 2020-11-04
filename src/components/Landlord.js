@@ -28,8 +28,8 @@ function Landlord({ landlord, deleteLandlord, properties }) {
   return (
     <div>
 
-      <Row>
-        <Col sm={4} className="border text-center">
+      <Row >
+        <Col sm={4} className="border text-center py-4">
           <h2>{name}</h2>
           <h3>{rating}</h3>
         </Col>
