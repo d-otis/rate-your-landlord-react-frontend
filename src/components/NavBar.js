@@ -10,7 +10,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="md" className="mb-3">
         <Navbar.Brand href="/">Rate Your Landlord</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
