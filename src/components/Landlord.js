@@ -20,8 +20,8 @@ function Landlord({ landlord, deleteLandlord, properties }) {
     setToggleEdit(!toggleEdit)
   }
 
-  const generatePropertyLink = propertyId => {
-    return <Link to={`/properties/${propertyId}`}>{propertyId}</Link>
+  const generatePropertyLink = property => {
+    return <Link to={`/properties/${property.id}`}>{property.address}</Link>
   }
 
 
