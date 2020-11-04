@@ -25,11 +25,9 @@ const Landlords = ({ landlords, updateLandlord, deleteLandlord, properties }) =>
   }
 
   return (
-    <div>
-      <Container>
-        {generateLandlords()}
-      </Container>
-    </div>
+    <React.Fragment>
+      {generateLandlords()}
+    </React.Fragment>
   )
 }
 
