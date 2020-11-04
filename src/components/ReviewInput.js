@@ -34,7 +34,7 @@ const ReviewInput = ({ propertyId, createReview, setShowReviewInput, toggleShowR
   return(
     <Container>
     <Row>
-      <Col sm={12}>
+      <Col sm={12} className="mt-4">
         <Form onSubmit={handleSubmit}>
         <Form.Group controlId="review-form-group">
           <Form.Label>Please leave a review</Form.Label>
@@ -45,7 +45,7 @@ const ReviewInput = ({ propertyId, createReview, setShowReviewInput, toggleShowR
           <Form.Control type="range" min="1" max="5" onChange={handleRatingChange} value={rating}/>
         </Form.Group>
         <Button variant="secondary" type="submit"> Save Review </Button>
-        <Button variant="secondary ml-3" onClick={toggleShowReviewInput}> Cancel </Button>
+        <Button variant="danger ml-3" onClick={toggleShowReviewInput}> Cancel </Button>
         </Form>
       </Col>
     </Row>
