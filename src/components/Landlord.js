@@ -24,7 +24,6 @@ function Landlord({ landlord, deleteLandlord, properties }) {
     return <Link to={`/properties/${property.id}`}>{property.address}</Link>
   }
 
-
   return (
     <div>
 
