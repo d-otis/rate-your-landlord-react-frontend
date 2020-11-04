@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { updateLandlord } from '../actions/landlords.actions'
 import { connect } from 'react-redux'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 const LandlordEditForm = ({ name: landlordName, setToggleEdit, updateLandlord, id }) => {
 
@@ -14,21 +16,18 @@ const LandlordEditForm = ({ name: landlordName, setToggleEdit, updateLandlord, i
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input 
+    <Form inline onSubmit={handleSubmit}>
+    <Form.Group>
+      <Form.Control 
         type="text"
         value={name}
         onChange={e => setName(e.target.value)}
         name="name"
       />
-      <input 
-        type="submit"
-        value="Save"
-      />
-    </form>
-
+    </Form.Group>
+      <Button variant="secondary" type="submit">Save</Button>
+    </Form>
   )
-
 }
 
 export default connect(null, { updateLandlord })(LandlordEditForm)
