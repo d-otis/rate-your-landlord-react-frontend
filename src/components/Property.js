@@ -21,7 +21,7 @@ const Property = ({ match, properties, landlords }) => {
 
   const getLandlordRating = id => {
     const landlord = landlords[id]
-    return landlords?.rating
+    return landlord?.rating
   }
 
   const toggleShowReviewInput = () => setShowReviewInput(!showReviewInput)
