@@ -22,9 +22,7 @@ class App extends Component {
           <NavBar />
           <Route exact path='/landlords' component={LandlordsContainer} />
 
-          <Route path='/properties' >
-            <PropertiesContainer />
-          </Route>
+          <Route path='/properties' component={PropertiesContainer} />
         </Router>
       )
     }
