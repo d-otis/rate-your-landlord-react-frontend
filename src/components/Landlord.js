@@ -13,7 +13,6 @@ function Landlord({ landlord, deleteLandlord, properties }) {
 
   const { id, 
           name,
-          reviews, 
           rating } = landlord
 
   const handleEditClick = () => {
