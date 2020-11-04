@@ -33,7 +33,7 @@ const LandlordInput = ({ createLandlord, toggleLandlordInput }) => {
           onChange={handleChange}
         />
       </Form.Group>
-      <Button type="submit">Create Landlord</Button>
+      <Button variant="secondary" type="submit">Create Landlord</Button>
       <Button onClick={toggleLandlordInput} className="ml-3" variant="secondary">Cancel</Button>
     </Form>
   )
