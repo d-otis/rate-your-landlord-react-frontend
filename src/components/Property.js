@@ -74,16 +74,8 @@ const Property = ({ match, properties, landlords }) => {
           </Container> {/*Landlord Meta Container*/}
 
         </Col> {/*Landlord Meta Column*/}
-        <h1>{property.address || "Loading"}</h1>
-        <ul>
-          <li>hasImage: {property.hasImage ? 'yes' : 'no'}</li>
-          <li>Number of Reviews: {property.reviews.length}</li>
-          <li>Average Rating: {property.rating} </li>
-          <li>Landlord: {getLandlordName(property.landlordId)}</li>
-        </ul>
-        {showReviewInput && <ReviewInput propertyId={propertyId} setShowReviewInput={setShowReviewInput} />}
         
-        {showReviewInput || <Button variant="secondary" onClick={toggleShowReviewInput}>Leave a Review</Button>}
+        
         {showReviewInput && <Button variant="secondary" onClick={toggleShowReviewInput}> Cancel </Button>}
       </Row>
 
