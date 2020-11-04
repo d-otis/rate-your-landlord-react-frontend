@@ -4,7 +4,17 @@ import Landlord from '../components/Landlord'
 const Landlords = ({ landlords, updateLandlord, deleteLandlord }) => {
 
   const generateLandlords = () => {
-    return Object.keys(landlords).map(id => <Landlord key={id} landlord={landlords[id]} deleteLandlord={deleteLandlord} />)
+    return (
+      Object.keys(landlords).map(id => {
+        return (
+          <Landlord 
+            key={id} 
+            landlord={landlords[id]} 
+            deleteLandlord={deleteLandlord} 
+          />
+        )
+      })
+    ) 
   }
 
   return (
