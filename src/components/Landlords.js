@@ -3,7 +3,7 @@ import Landlord from '../components/Landlord'
 import Container from 'react-bootstrap/Container'
 import { connect } from 'react-redux'
 
-const Landlords = ({ landlords, updateLandlord, deleteLandlord }) => {
+const Landlords = ({ landlords, updateLandlord, deleteLandlord, properties }) => {
 
   const generateLandlords = () => {
     return (
