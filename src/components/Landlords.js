@@ -10,7 +10,7 @@ const Landlords = ({ landlords, updateLandlord, deleteLandlord, properties }) =>
     const propertyValues = Object.values(properties)
 
     return (
-      Object.keys(landlords).map(id => {
+      Object.keys(landlords).reverse().map(id => {
         const properties = propertyValues.filter(property => property.landlordId === id)
         return (
           <Landlord 
