@@ -21,22 +21,21 @@ const LandlordInput = ({ createLandlord }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} >
-      <label htmlFor="landlord-name">Create a Landlord</label>
-      <br />
-      <input
-        type="text"
-        placeholder="Landlord Name"
-        id="landlord-name"
-        name="name"
-        value={name}
-        onChange={handleChange}
-      />
-      <br />
-      <input 
-        type="submit"
-      />
-      </form>
+      <Form onSubmit={handleSubmit} >
+        <Form.Group>
+          <Form.Label htmlFor="landlord-name">Create a Landlord</Form.Label>
+          <br />
+          <Form.Control
+            type="text"
+            placeholder="Landlord Name"
+            id="landlord-name"
+            name="name"
+            value={name}
+            onChange={handleChange}
+          />
+        </Form.Group>
+        <Button type="submit">Create Landlord</Button>
+      </Form>
     </div>
 
   )
