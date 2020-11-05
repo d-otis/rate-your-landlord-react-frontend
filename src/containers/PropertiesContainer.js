@@ -18,6 +18,14 @@ class PropertiesContainer extends Component {
     this.props.fetchReviews()
   }
 
+  handleClick = () => {
+    this.toggleShowPropertyInput()
+  }
+
+  toggleShowPropertyInput = () => {
+    this.setState({showPropertyInput: !this.state.showPropertyInput})
+  }
+
   render() {
 
     const { properties, createProperty, editProperty, deleteProperty, landlords, createLandlord } = this.props
