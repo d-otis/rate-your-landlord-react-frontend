@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 
 const PropertyInput = props => {
 
-  const { createProperty, landlords, createLandlord, fetchProperties } = props
+  const { createProperty, landlords, createLandlord, fetchProperties, toggleShowPropertyInput } = props
 
   const [ address, setAddress ] = useState('')
   const [ landlordId, setLandlordId ] = useState('choose')
