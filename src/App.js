@@ -8,12 +8,14 @@ import LandlordsContainer from './containers/LandlordsContainer'
 import PropertiesContainer from './containers/PropertiesContainer'
 import { fetchLandlords } from './actions/landlords.actions'
 import { fetchProperties } from './actions/properties.actions'
+import { fetchReviews } from './actions/reviews.actions'
 
 class App extends Component {
 
   componentDidMount() {
     this.props.fetchLandlords()
     this.props.fetchProperties()
+    this.props.fetchReviews()
   }
 
     render() {
@@ -30,4 +32,4 @@ class App extends Component {
 
 const mapStateToProps = state => state
 
-export default connect(mapStateToProps, { fetchLandlords, fetchProperties })(App);
+export default connect(mapStateToProps, { fetchLandlords, fetchProperties, fetchReviews })(App);
