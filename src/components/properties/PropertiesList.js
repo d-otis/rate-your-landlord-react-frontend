@@ -2,7 +2,7 @@ import React from 'react'
 import Property from './Property'
 import { useRouteMatch, Switch, Route, Link } from 'react-router-dom'
 
-const Properties = ({ properties, landlords }) => {
+const PropertiesList = ({ properties, landlords }) => {
 
   let { path } = useRouteMatch()
 
@@ -25,4 +25,4 @@ const Properties = ({ properties, landlords }) => {
   )
 }
 
-export default Properties
+export default PropertiesList

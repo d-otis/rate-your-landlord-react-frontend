@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropertyInput from '../components/properties/PropertyInput'
-import Properties from '../components/properties/Properties'
-import { fetchProperties, createProperty } from '../actions/properties.actions'
+import PropertiesList from '../components/properties/PropertiesList'
+import { createProperty } from '../actions/properties.actions'
 import { fetchReviews } from '../actions/reviews.actions'
 import { createLandlord } from '../actions/landlords.actions'
 import Button from 'react-bootstrap/Button'
@@ -41,7 +41,7 @@ class PropertiesContainer extends Component {
           toggleShowPropertyInput={this.toggleShowPropertyInput}
         />}
         {this.state.showPropertyInput || <Button variant="secondary" onClick={this.handleClick}>Add Property</Button>}
-        <Properties 
+        <PropertiesList 
           properties={properties} 
           editProperty={editProperty} 
           deleteProperty={deleteProperty} 

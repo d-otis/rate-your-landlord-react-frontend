@@ -44,7 +44,7 @@ export default function landlordsReducer(
 
       stateCopy = Object.assign({}, state)
       stateCopy[newLandlord.id] = newLandlord
-
+      
       return stateCopy
 
     case "UPDATE_LANDLORD":
