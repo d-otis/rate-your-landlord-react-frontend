@@ -47,7 +47,7 @@ class PropertiesContainer extends Component {
           deleteProperty={deleteProperty} 
           landlords={landlords} 
         />
-      </div>
+      </Container>
     )
   }
 }
