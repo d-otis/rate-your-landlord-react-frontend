@@ -18,16 +18,15 @@ class App extends Component {
     this.props.fetchReviews()
   }
 
-    render() {
-      return (
-        <Router>
+  render() {
+    return (
+      <Router>
           <NavBar />
           <Route exact path='/landlords' component={LandlordsContainer} />
-
-          <Route path='/properties' component={PropertiesContainer} />
-        </Router>
-      )
-    }
+          <Route path='/properties' render={routerProps => <PropertiesContainer {...routerProps} />} />
+      </Router>
+    )
+  }
 }
 
 const mapStateToProps = state => state
