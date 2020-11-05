@@ -62,15 +62,15 @@ const PropertyInput = props => {
   const renderLandlordInput = () => {
     return(
       <React.Fragment>
-        <br />
-        <label htmlFor="landlord-name">Add a new Landlord</label>
-        <br />
-        <input 
+      <Form.Group>
+        <Form.Label>Add a new Landlord</Form.Label>
+        <Form.Control 
           type="text" 
           placeholder="Enter landlord's name" 
           onChange={handleLandlordNameChange} 
           value={landlordName}
         />
+      </Form.Group>
       </React.Fragment>
     )
   }
@@ -81,33 +81,34 @@ const PropertyInput = props => {
 
   return(
     <div>
-      <h1>Add a Property</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="address">Address: </label>
-        <br />
-        <input 
-          type="text"
-          name="address"
-          id="address"
-          placeholder="type address here"
-          value={address}
-          onChange={handleAddressChange}
-        />
-        <br />
-        <label htmlFor="landlord">Choose a Landlord: </label>
-        <br />
-        <select name="" id="landlord" onChange={handleLandlordChange} value={landlordId} >
-          <option value="choose">Select:</option>
-            {generateLandlordSelect()}
-          <option value="new">Create a New Landlord</option>
-        </select>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group>
+          <Form.Label>Address: </Form.Label>
+          <Form.Control 
+            type="text"
+            name="address"
+            id="address"
+            placeholder="type address here"
+            value={address}
+            onChange={handleAddressChange}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Choose a Landlord: </Form.Label>
+          <Form.Control as="select" name="" id="landlord" onChange={handleLandlordChange} value={landlordId} >
+            <option value="choose">Select:</option>
+              {generateLandlordSelect()}
+            <option value="new">Create a New Landlord</option>
+          </Form.Control>
+        </Form.Group>
         {showNewLandlordInput && renderLandlordInput()}
-        <br />
+        <Form.Group>
+          <Form.File label="Upload a photo:" />
+        </Form.Group>
         <small>[Photo Upload!]</small>
         <br />
-        <input type="submit" value="Create Property" />
-      <hr />
-      </form>
+        <Button variant="secondary" type="submit">Create Property</Button>
+      </Form>
     </div>
   )
 }
