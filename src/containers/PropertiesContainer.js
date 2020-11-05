@@ -10,10 +10,8 @@ import Container from 'react-bootstrap/Container'
 import { Route } from 'react-router-dom'
 import Property from '../components/properties/Property'
 
-const PropertiesContainer = ({ properties, createProperty, editProperty, deleteProperty, landlords, createLandlord }) => {
+const PropertiesContainer = ({ match, properties, createProperty, editProperty, deleteProperty, landlords, createLandlord }) => {
 
-  let { path } = useRouteMatch()
-  
   const [ showPropertyInput, setShowPropertyInput ] = useState(false)
 
   const handleClick = () => {
