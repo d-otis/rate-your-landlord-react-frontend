@@ -1,12 +1,11 @@
 import React from 'react'
-import Property from './Property'
-import { useRouteMatch, Switch, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 const PropertiesList = ({ properties, landlords }) => {
 
-  let { path } = useRouteMatch()
+
 
   const generatePropertiesList = () => {
     return Object.keys(properties).map(id=> 
@@ -26,12 +25,7 @@ const PropertiesList = ({ properties, landlords }) => {
     <div>
       {generatePropertiesList()}
 
-      <Switch>
-        <Route 
-          path={`${path}/:propertyId`} 
-          render={routerProps => <Property {...routerProps} properties={properties} landlords={landlords} />} 
-        />
-      </Switch>
+
 
     </div>
   )
