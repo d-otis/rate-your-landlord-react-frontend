@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import Container from 'react-bootstrap/Container'
 
 const PropertyInput = props => {
 
@@ -87,7 +86,6 @@ const PropertyInput = props => {
   }
 
   return(
-    <Container>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
           <Form.Label>Address: </Form.Label>
@@ -115,8 +113,8 @@ const PropertyInput = props => {
         <small>[Photo Upload!]</small>
         <br />
         <Button variant="secondary" type="submit">Create Property</Button>
+        <Button variant="secondary" className="ml-2" onClick={toggleShowPropertyInput}>Cancel</Button>
       </Form>
-    </Container>
   )
 }
 
