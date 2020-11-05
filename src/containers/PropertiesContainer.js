@@ -59,4 +59,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchProperties, createProperty, createLandlord, fetchReviews })(PropertiesContainer)
+export default connect(mapStateToProps, { createProperty, createLandlord, fetchReviews })(PropertiesContainer)
