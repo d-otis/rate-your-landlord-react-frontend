@@ -23,34 +23,25 @@ const PropertiesContainer = ({ match, properties, createProperty, editProperty, 
   }
 
   return (
-    <React.Fragment>
-
-      <Container>
-        {showPropertyInput 
-          &&        
-        <PropertyInput 
-          createProperty={createProperty} 
-          landlords={landlords} 
-          createLandlord={createLandlord}
-          toggleShowPropertyInput={this.toggleShowPropertyInput}
-        />}
-        {showPropertyInput || <Button variant="secondary" onClick={handleClick}>Add Property</Button>}
-        <PropertiesList 
-          properties={properties} 
-          editProperty={editProperty} 
-          deleteProperty={deleteProperty} 
-          landlords={landlords} 
-        />
-      </Container>
-
-      <Switch>
-        <Route 
-          path={`${path}/:propertyId`} 
-          render={routerProps => <Property {...routerProps} properties={properties} landlords={landlords} />} 
-        />
-      </Switch>
-
-    </React.Fragment>
+    <Container>
+      {showPropertyInput 
+        &&        
+      <PropertyInput 
+        createProperty={createProperty} 
+        landlords={landlords} 
+        createLandlord={createLandlord}
+        toggleShowPropertyInput={toggleShowPropertyInput}
+      />}
+      {showPropertyInput || <Button variant="secondary" onClick={handleClick}>Add Property</Button>}
+      <Route 
+        path={`${match.path}/:propertyId`} 
+        render={routerProps => <Property {...routerProps} properties={properties} landlords={landlords} />} 
+      />
+      <Route 
+        exact 
+        path={match.url} render={routerProps => <PropertiesList {...routerProps} properties={properties} editProperty={editProperty} deleteProperty={deleteProperty} landlords={landlords}  />}
+      />
+    </Container>
   )
 }
 
