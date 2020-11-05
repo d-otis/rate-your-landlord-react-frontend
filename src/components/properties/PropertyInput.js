@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 
 const PropertyInput = props => {
 
@@ -86,7 +87,7 @@ const PropertyInput = props => {
   }
 
   return(
-    <div>
+    <Container>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
           <Form.Label>Address: </Form.Label>
@@ -115,7 +116,7 @@ const PropertyInput = props => {
         <br />
         <Button variant="secondary" type="submit">Create Property</Button>
       </Form>
-    </div>
+    </Container>
   )
 }
 
