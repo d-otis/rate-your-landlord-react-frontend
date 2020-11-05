@@ -7,6 +7,8 @@ import { fetchReviews } from '../actions/reviews.actions'
 import { createLandlord } from '../actions/landlords.actions'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
+import { useRouteMatch, Switch, Route, Link } from 'react-router-dom'
+import Property from '../components/properties/Property'
 
 const PropertiesContainer = ({ properties, createProperty, editProperty, deleteProperty, landlords, createLandlord }) => {
 
@@ -42,8 +44,16 @@ const PropertiesContainer = ({ properties, createProperty, editProperty, deleteP
           landlords={landlords} 
         />
       </Container>
-    )
-  }
+
+      <Switch>
+        <Route 
+          path={`${path}/:propertyId`} 
+          render={routerProps => <Property {...routerProps} properties={properties} landlords={landlords} />} 
+        />
+      </Switch>
+
+    </React.Fragment>
+  )
 }
 
 const mapStateToProps = state => {
