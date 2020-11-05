@@ -6,8 +6,6 @@ import { fetchProperties } from '../../actions/properties.actions'
 
 const PropertyInput = ({ createProperty, landlords, createLandlord, fetchProperties, toggleShowPropertyInput }) => {
 
-  const { createProperty, landlords, createLandlord, fetchProperties, toggleShowPropertyInput } = props
-
   const [ address, setAddress ] = useState('')
   const [ landlordId, setLandlordId ] = useState('choose')
   const [ showNewLandlordInput, setShowNewLandlordInput ] = useState(false)
