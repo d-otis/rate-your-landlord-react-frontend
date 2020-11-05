@@ -12,7 +12,7 @@ const Properties = ({ properties, landlords }) => {
 
   return(
     <div>
-      {/*{generatePropertiesList()}*/}
+      {generatePropertiesList()}
 
       <Switch>
         <Route 
