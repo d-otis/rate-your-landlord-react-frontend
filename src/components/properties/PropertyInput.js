@@ -10,9 +10,14 @@ const PropertyInput = props => {
   const [ landlordId, setLandlordId ] = useState('choose')
   const [ showNewLandlordInput, setShowNewLandlordInput ] = useState(false)
   const [ landlordName, setLandlordName ] = useState('')
+  const [ file, setFile ] = useState(null)
 
   const handleAddressChange = e => {
     setAddress(e.target.value)
+  }
+
+  const handleFileChange = e => {
+    setFile(e.target.files[0])
   }
 
   const handleLandlordChange = e => {
@@ -57,6 +62,7 @@ const PropertyInput = props => {
     setAddress('')
     setLandlordId('choose')
     setShowNewLandlordInput(false)
+    setFile(null)
   }
 
   const renderLandlordInput = () => {
@@ -103,7 +109,7 @@ const PropertyInput = props => {
         </Form.Group>
         {showNewLandlordInput && renderLandlordInput()}
         <Form.Group>
-          <Form.File label="Upload a photo:" />
+          <Form.File label="Upload a photo!" onChange={handleFileChange} />
         </Form.Group>
         <small>[Photo Upload!]</small>
         <br />

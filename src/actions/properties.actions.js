@@ -19,6 +19,7 @@ export function createProperty(property) {
     },
     body: JSON.stringify({property: {address: property.address, landlord_id: property.landlordId} })
   }
+
   return dispatch => {
     fetch(`${BASE_URL}/properties`, config)
       .then(res => res.json())
