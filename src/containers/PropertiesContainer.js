@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { connect } from 'react-redux'
 import PropertyInput from '../components/properties/PropertyInput'
 import PropertiesList from '../components/properties/PropertiesList'
@@ -8,31 +8,25 @@ import { createLandlord } from '../actions/landlords.actions'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 
-class PropertiesContainer extends Component {
+const PropertiesContainer = ({ properties, createProperty, editProperty, deleteProperty, landlords, createLandlord }) => {
 
-  state = {
-    showPropertyInput: false
+  let { path } = useRouteMatch()
+  
+  const [ showPropertyInput, setShowPropertyInput ] = useState(false)
+
+  const handleClick = () => {
+    toggleShowPropertyInput()
   }
 
-  componentDidMount() {
-    this.props.fetchReviews()
+  const toggleShowPropertyInput = () => {
+    setShowPropertyInput(!showPropertyInput)
   }
 
-  handleClick = () => {
-    this.toggleShowPropertyInput()
-  }
+  return (
+    <React.Fragment>
 
-  toggleShowPropertyInput = () => {
-    this.setState({showPropertyInput: !this.state.showPropertyInput})
-  }
-
-  render() {
-
-    const { properties, createProperty, editProperty, deleteProperty, landlords, createLandlord } = this.props
-
-    return (
       <Container>
-        {this.state.showPropertyInput 
+        {showPropertyInput 
           &&        
         <PropertyInput 
           createProperty={createProperty} 
@@ -40,7 +34,7 @@ class PropertiesContainer extends Component {
           createLandlord={createLandlord}
           toggleShowPropertyInput={this.toggleShowPropertyInput}
         />}
-        {this.state.showPropertyInput || <Button variant="secondary" onClick={this.handleClick}>Add Property</Button>}
+        {showPropertyInput || <Button variant="secondary" onClick={handleClick}>Add Property</Button>}
         <PropertiesList 
           properties={properties} 
           editProperty={editProperty} 
