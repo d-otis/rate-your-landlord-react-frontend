@@ -5,6 +5,8 @@ import Properties from '../components/properties/Properties'
 import { fetchProperties, createProperty } from '../actions/properties.actions'
 import { fetchReviews } from '../actions/reviews.actions'
 import { createLandlord } from '../actions/landlords.actions'
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 
 class PropertiesContainer extends Component {
 
