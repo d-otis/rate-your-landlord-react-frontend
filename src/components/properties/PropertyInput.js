@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import { connect } from 'react-redux'
+import { fetchProperties } from '../../actions/properties.actions'
 
-const PropertyInput = props => {
+const PropertyInput = ({ createProperty, landlords, createLandlord, fetchProperties, toggleShowPropertyInput }) => {
 
   const { createProperty, landlords, createLandlord, fetchProperties, toggleShowPropertyInput } = props
 
@@ -118,4 +120,4 @@ const PropertyInput = props => {
   )
 }
 
-export default PropertyInput
+export default connect(null, { fetchProperties })(PropertyInput)
