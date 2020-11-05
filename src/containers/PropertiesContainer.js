@@ -31,7 +31,9 @@ class PropertiesContainer extends Component {
     const { properties, createProperty, editProperty, deleteProperty, landlords, createLandlord } = this.props
 
     return (
-      <div>
+      <Container>
+        {this.state.showPropertyInput 
+          &&        
         <PropertyInput 
           createProperty={createProperty} 
           landlords={landlords} 
