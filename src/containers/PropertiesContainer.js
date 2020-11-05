@@ -10,6 +10,10 @@ import Container from 'react-bootstrap/Container'
 
 class PropertiesContainer extends Component {
 
+  state = {
+    showPropertyInput: false
+  }
+
   componentDidMount() {
     this.props.fetchReviews()
   }
