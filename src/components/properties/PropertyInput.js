@@ -62,6 +62,7 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
     setAddress('')
     setLandlordId('choose')
     setShowNewLandlordInput(false)
+    toggleShowPropertyInput()
     setFile(null)
   }
 
