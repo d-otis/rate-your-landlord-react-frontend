@@ -18,8 +18,17 @@ class PropertiesContainer extends Component {
 
     return (
       <div>
-        <PropertyInput createProperty={createProperty} landlords={landlords} createLandlord={createLandlord} />
-        <Properties properties={properties} editProperty={editProperty} deleteProperty={deleteProperty} landlords={landlords} />
+        <PropertyInput 
+          createProperty={createProperty} 
+          landlords={landlords} 
+          createLandlord={createLandlord} 
+        />
+        <Properties 
+          properties={properties} 
+          editProperty={editProperty} 
+          deleteProperty={deleteProperty} 
+          landlords={landlords} 
+        />
       </div>
     )
   }
