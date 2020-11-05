@@ -37,8 +37,10 @@ class PropertiesContainer extends Component {
         <PropertyInput 
           createProperty={createProperty} 
           landlords={landlords} 
-          createLandlord={createLandlord} 
-        />
+          createLandlord={createLandlord}
+          toggleShowPropertyInput={this.toggleShowPropertyInput}
+        />}
+        {this.state.showPropertyInput || <Button variant="secondary" onClick={this.handleClick}>Add Property</Button>}
         <Properties 
           properties={properties} 
           editProperty={editProperty} 
