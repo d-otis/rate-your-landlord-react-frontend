@@ -13,6 +13,10 @@ function Landlord({ id, match, landlords, deleteLandlord, properties }) {
 
   const landlord = id ? landlords[id] : landlords[match.params.landlordId]
 
+  const { name, rating } = landlord
+
+  const myProperties = Object.values(properties).filter(property => property.landlordId === landlord.id)
+
   const handleEditClick = () => {
     setToggleEdit(!toggleEdit)
   }
