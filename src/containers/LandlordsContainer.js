@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Landlords from '../components/landlords/Landlords'
+import LandlordsList from '../components/landlords/LandlordsList'
 import LandlordInput from '../components/landlords/LandlordInput'
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
@@ -17,7 +17,7 @@ const LandlordsContainer = ({ landlords }) => {
     <Container>
       {showLandlordInput || <Button variant="secondary" onClick={toggleLandlordInput} className="mb-3">Add a Landlord</Button>}
       {showLandlordInput && <LandlordInput toggleLandlordInput={toggleLandlordInput} />}
-      <Landlords landlords={landlords} />
+      <LandlordsList landlords={landlords} />
     </Container>
   )
 }
