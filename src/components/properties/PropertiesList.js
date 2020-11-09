@@ -13,7 +13,6 @@ const PropertiesList = ({ properties, landlords }) => {
   const generatePropertiesList = () => {
     return Object.keys(properties).map(id=> {
       const landlord = landlords[properties[id].landlordId]
-      console.log(landlord)
       return (
         <Card key={id} className="my-4">
           <Card.Header as="h3"> {properties[id].address} </Card.Header>
