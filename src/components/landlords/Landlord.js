@@ -43,23 +43,31 @@ function Landlord({ id, match, landlords, deleteLandlord, properties }) {
   }
 
   return (
-    <div>
-
-      <Row className="mb-3" >
-        <Col sm={4} className="border text-center py-4">
-          <Link to={`/landlords/${id}`}><h2>{name}</h2></Link>
-          <h3>{rating}</h3>
-          {toggleEdit && <LandlordEditForm name={name} id={id} setToggleEdit={setToggleEdit} />}
+    <Container>
+      <Row className="mb-3">
+        <Col sm={4}>
+          <img src="/user_placeholder.png" alt="" width="100%" className="rounded-pill" />
+          {/*<Link to={`/landlords/${id}`}> <h2>{name}</h2></Link>*/}
         </Col>
-        <Col sm={8} className="border py-4">
-          <ul>
-            {myProperties.map(property => <li key={property.id}>{generatePropertyLink(property)}</li>)}
-          </ul>
+        <Col sm={8} className="border rounded-lg bg-light p-2">
+          <Container className="overflow-auto" style={{ 'maxHeight': '250px', 'overflowY': 'scroll' }}>
+            {generateProperties()}
+          </Container>
+        </Col>
+      </Row>
+      <Row className="mb-5">
+        <Col sm={4}>
+          <Link to={`/landlords/${id}`}> <h2>{name}</h2></Link>
+          <h3>Rating: {rating}</h3>
+        </Col>
+          {toggleEdit && <Col sm={4}><LandlordEditForm name={name} id={id} setToggleEdit={setToggleEdit} /></Col>}
+        <Col>
           <Button className="mr-2" variant="outline-secondary" onClick={handleEditClick} >Edit Landlord</Button>
           <Button variant="outline-danger" onClick={() => deleteLandlord(id)}>Delete Landlord</Button>
         </Col>
       </Row>
-    </div>
+      <hr />
+    </Container>
   )
 }
 
