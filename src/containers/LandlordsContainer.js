@@ -34,7 +34,8 @@ const LandlordsContainer = ({ match, landlords, properties }) => {
 
 const mapStateToProps = (state) => {
   return {
-    landlords: state.landlords
+    landlords: state.landlords,
+    properties: state.properties
   }
 }
 
