@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <Router>
           <NavBar />
-          <Route exact path='/landlords' render={routerProps => <LandlordsContainer {...routerProps} />} />
+          <Route path='/landlords' render={routerProps => <LandlordsContainer {...routerProps} />} />
           <Route path='/properties' render={routerProps => <PropertiesContainer {...routerProps} />} />
       </Router>
     )
