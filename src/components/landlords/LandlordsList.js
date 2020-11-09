@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 const LandlordsList = ({ landlords, updateLandlord, deleteLandlord, properties }) => {
 
   const generateLandlordsList = () => {
-
     return (
       Object.keys(landlords).map(id => {
         return (
