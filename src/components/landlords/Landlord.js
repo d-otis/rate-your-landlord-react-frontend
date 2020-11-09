@@ -36,7 +36,7 @@ function Landlord({ id, match, landlords, deleteLandlord, properties }) {
         </Col>
         <Col sm={8} className="border py-4">
           <ul>
-            {properties.map(property => <li key={property.id}>{generatePropertyLink(property)}</li>)}
+            {myProperties.map(property => <li key={property.id}>{generatePropertyLink(property)}</li>)}
           </ul>
           <Button className="mr-2" variant="outline-secondary" onClick={handleEditClick} >Edit Landlord</Button>
           <Button variant="outline-danger" onClick={() => deleteLandlord(id)}>Delete Landlord</Button>
