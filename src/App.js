@@ -29,6 +29,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => state
-
 export default connect(null, { fetchLandlords, fetchProperties, fetchReviews })(App);
