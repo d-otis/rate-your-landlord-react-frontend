@@ -16,7 +16,7 @@ const LandlordEditForm = ({ name: landlordName, setToggleEdit, updateLandlord, i
   }
 
   return (
-    <Form inline onSubmit={handleSubmit} className="justify-content-around">
+    <Form inline onSubmit={handleSubmit} className="">
     <Form.Group>
       <Form.Control 
         type="text"
