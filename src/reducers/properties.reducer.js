@@ -6,6 +6,7 @@ export default function propertiesReducer(
 ) {
   let propertyJSON
   let stateCopy
+  let newProperty
   switch (action.type) {
     case 'LOADING_PROPERTIES':
       return state
@@ -31,7 +32,7 @@ export default function propertiesReducer(
     case "ADD_PROPERTY":
       propertyJSON = action.payload.data
 
-      let newProperty = {
+      newProperty = {
         id: propertyJSON.id,
         address: propertyJSON.attributes.address,
         reviews: propertyJSON.relationships.reviews.data,
