@@ -28,7 +28,7 @@ function Landlord({ landlord, deleteLandlord, properties }) {
 
       <Row className="mb-3" >
         <Col sm={4} className="border text-center py-4">
-          <h2>{name}</h2>
+          <Link to={`/landlords/${id}`}><h2>{name}</h2></Link>
           <h3>{rating}</h3>
           {toggleEdit && <LandlordEditForm name={name} id={id} setToggleEdit={setToggleEdit} />}
         </Col>
