@@ -91,8 +91,7 @@ export default function propertiesReducer(
       // 2. delete them based on
       stateCopy = Object.assign({}, state)
 
-      deletedProperties.map(property => {
-        console.log('inside deletedProperties map, stateCopy: ', stateCopy)
+      deletedProperties.forEach(property => {
         delete stateCopy[property.id]
       })
 
