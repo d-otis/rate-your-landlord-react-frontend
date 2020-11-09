@@ -63,6 +63,27 @@ export default function propertiesReducer(
 
       return stateCopy
 
+    case 'ADD_LANDLORD':
+      // Parse through returned JSON and 
+      // add property data from returned new Landlord
+      // ass to properties!
+      propertyJSON = action.payload.included[0]
+
+      newProperty = {
+        id: propertyJSON.id,
+        address: propertyJSON.attributes.address,
+        reviews: [],
+        landlordId: propertyJSON.attributes.landlord_id,
+        imageUrl: propertyJSON.attributes.image_url,
+        hasImage: propertyJSON.attributes.has_image,
+        rating: formatRating(propertyJSON.attributes.rating)
+      }
+
+      stateCopy = Object.assign({}, state)
+      stateCopy[newProperty.id] = newProperty
+
+      return stateCopy
+
     default:
       return state
   }
