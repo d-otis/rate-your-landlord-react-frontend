@@ -44,11 +44,7 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
     // createProperty({address: address, landlordId: landlordId})
 
     if (showNewLandlordInput) {
-      // nested attrs for creating new landlord
       createLandlord({name: landlordName, properties_attributes: [{address: address}]})
-      // figure out how to make below work:
-      // right now it's not updating--probably due to async business
-      fetchProperties()
     } else {
       createProperty({address: address, landlordId: landlordId})
     }
