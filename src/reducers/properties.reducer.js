@@ -84,6 +84,20 @@ export default function propertiesReducer(
 
       return stateCopy
 
+    case 'DELETE_LANDLORD':
+      let landlordId = action.payload.data.id
+      let deletedProperties = Object.values(state).filter(properties => properties.landlordId === action.payload.data.id)
+      // 1. get list of all landlords properties
+      // 2. delete them based on
+      stateCopy = Object.assign({}, state)
+
+      deletedProperties.map(property => {
+        console.log('inside deletedProperties map, stateCopy: ', stateCopy)
+        delete stateCopy[property.id]
+      })
+
+      return stateCopy
+
     default:
       return state
   }
