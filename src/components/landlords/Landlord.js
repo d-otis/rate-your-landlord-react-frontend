@@ -28,7 +28,7 @@ function Landlord({ id, match, landlords, properties }) {
             <img src="/15-512.png" alt="" width="100%" />
           </Col>
           <Col sm={10}>
-            <Link to={`/properties/${property.id}`}><p className="mt-4">{property.address}</p></Link>
+            {generatePropertyLink(property)}
           </Col>
         </Row>
       )
@@ -36,7 +36,7 @@ function Landlord({ id, match, landlords, properties }) {
   }
 
   const generatePropertyLink = property => {
-    return <Link to={`/properties/${property.id}`}>{property.address}</Link>
+    return <Link to={`/properties/${property.id}`}><p className="mt-4">{property.address}</p></Link>
   }
 
   return (
