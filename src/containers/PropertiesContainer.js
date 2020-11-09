@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import PropertyInput from '../components/properties/PropertyInput'
 import PropertiesList from '../components/properties/PropertiesList'
 import { createProperty } from '../actions/properties.actions'
-import { fetchReviews } from '../actions/reviews.actions'
 import { createLandlord } from '../actions/landlords.actions'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
@@ -52,4 +51,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { createProperty, createLandlord, fetchReviews })(PropertiesContainer)
+export default connect(mapStateToProps, { createProperty, createLandlord })(PropertiesContainer)
