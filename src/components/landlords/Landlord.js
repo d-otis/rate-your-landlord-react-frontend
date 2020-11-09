@@ -25,7 +25,7 @@ function Landlord({ id, match, landlords, deleteLandlord, properties }) {
   const generateProperties = () => {
     return myProperties.map(property => {
       return (
-        <Row className="my-4">
+        <Row className="my-4" key={property.id}>
           <Col sm={2}>
             <img src="/15-512.png" alt="" width="100%" />
           </Col>
