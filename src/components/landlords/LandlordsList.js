@@ -11,8 +11,8 @@ const LandlordsList = ({ landlords, updateLandlord, deleteLandlord, properties }
         return (
           <Landlord 
             key={id} 
-            landlord={landlords[id]} 
-            deleteLandlord={deleteLandlord}
+            id={id}
+            landlords={landlords}
             properties={properties}
           />
         )
