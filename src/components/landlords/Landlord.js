@@ -30,8 +30,7 @@ function Landlord({ id, match, landlords, deleteLandlord, properties }) {
             <img src="/15-512.png" alt="" width="100%" />
           </Col>
           <Col sm={10}>
-          <Link to={`/properties/${property.id}`}><p className="mt-4">{property.address}</p></Link>
-
+            <Link to={`/properties/${property.id}`}><p className="mt-4">{property.address}</p></Link>
           </Col>
         </Row>
       )
