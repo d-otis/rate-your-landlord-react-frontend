@@ -22,6 +22,22 @@ function Landlord({ id, match, landlords, deleteLandlord, properties }) {
     setToggleEdit(!toggleEdit)
   }
 
+  const generateProperties = () => {
+    return myProperties.map(property => {
+      return (
+        <Row className="my-4">
+          <Col sm={2}>
+            <img src="/15-512.png" alt="" width="100%" />
+          </Col>
+          <Col sm={10}>
+          <Link to={`/properties/${property.id}`}><p>{property.address}</p></Link>
+
+          </Col>
+        </Row>
+      )
+    })
+  }
+
   const generatePropertyLink = property => {
     return <Link to={`/properties/${property.id}`}>{property.address}</Link>
   }
