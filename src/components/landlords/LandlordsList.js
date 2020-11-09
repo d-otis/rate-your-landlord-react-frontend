@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 const LandlordsList = ({ landlords, updateLandlord, deleteLandlord, properties }) => {
 
-  const generateLandlords = () => {
+  const generateLandlordsList = () => {
 
     const propertyValues = Object.values(properties)
 
@@ -25,7 +25,7 @@ const LandlordsList = ({ landlords, updateLandlord, deleteLandlord, properties }
 
   return (
     <React.Fragment>
-      {generateLandlords()}
+      {generateLandlordsList()}
     </React.Fragment>
   )
 }
