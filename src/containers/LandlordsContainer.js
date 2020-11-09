@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button'
 import { Route } from 'react-router-dom'
 import Landlord from '../components/landlords/Landlord'
 
-const LandlordsContainer = ({ landlords }) => {
+const LandlordsContainer = ({ match, landlords }) => {
 
   const [ showLandlordInput, setShowLandlordInput ] = useState(false)
 
