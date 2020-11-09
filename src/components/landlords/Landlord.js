@@ -59,7 +59,7 @@ function Landlord({ id, match, landlords, properties }) {
         </Col>
           {toggleEdit && <Col sm={4}><LandlordEditForm name={name} id={landlord.id} setToggleEdit={setToggleEdit} /></Col>}
         <Col>
-          <Button className="mr-2" variant="outline-secondary" onClick={handleEditClick} >Edit Landlord</Button>
+          <Button className="mr-2" variant={`outline-${toggleEdit ? 'danger' : 'secondary'}`} onClick={handleEditClick} >{toggleEdit ? 'Cancel' : 'Edit Landlord'}</Button>
         </Col>
       </Row>
       <hr />
