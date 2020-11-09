@@ -10,14 +10,9 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
   const [ landlordId, setLandlordId ] = useState('choose')
   const [ showNewLandlordInput, setShowNewLandlordInput ] = useState(false)
   const [ landlordName, setLandlordName ] = useState('')
-  const [ file, setFile ] = useState(null)
 
   const handleAddressChange = e => {
     setAddress(e.target.value)
-  }
-
-  const handleFileChange = e => {
-    setFile(e.target.files[0])
   }
 
   const handleLandlordChange = e => {
@@ -63,7 +58,6 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
     setLandlordId('choose')
     setShowNewLandlordInput(false)
     toggleShowPropertyInput()
-    setFile(null)
   }
 
   const renderLandlordInput = () => {
@@ -108,10 +102,6 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
           </Form.Control>
         </Form.Group>
         {showNewLandlordInput && renderLandlordInput()}
-        <Form.Group>
-          <Form.File label="Upload a photo!" onChange={handleFileChange} />
-        </Form.Group>
-        <small>[Photo Upload!]</small>
         <br />
         <Button variant="secondary" type="submit">Create Property</Button>
         <Button variant="secondary" className="ml-2" onClick={toggleShowPropertyInput}>Cancel</Button>
