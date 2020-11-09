@@ -19,7 +19,11 @@ const LandlordsContainer = ({ match, landlords }) => {
     <Container>
       {showLandlordInput || <Button variant="secondary" onClick={toggleLandlordInput} className="mb-3">Add a Landlord</Button>}
       {showLandlordInput && <LandlordInput toggleLandlordInput={toggleLandlordInput} />}
-      <LandlordsList landlords={landlords} />
+      
+      <Route path={`${match.path}/:landlordId`} render={routerProps => <Landlord {...routerProps} landlords={landlords} />}/>
+      <Route 
+        exact path={match.url} render={routerProps => <LandlordsList {...routerProps} landlords={landlords} />}
+      />
     </Container>
   )
 }
