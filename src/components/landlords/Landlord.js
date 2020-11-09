@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 
-function Landlord({ landlord, deleteLandlord, properties }) {
+function Landlord({ id, match, landlords, deleteLandlord, properties }) {
 
   const [ toggleEdit, setToggleEdit ] = useState(false)
 
