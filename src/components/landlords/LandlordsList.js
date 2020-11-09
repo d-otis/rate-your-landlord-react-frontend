@@ -6,8 +6,6 @@ const LandlordsList = ({ landlords, updateLandlord, deleteLandlord, properties }
 
   const generateLandlordsList = () => {
 
-    const propertyValues = Object.values(properties)
-
     return (
       Object.keys(landlords).reverse().map(id => {
         const properties = propertyValues.filter(property => property.landlordId === id)
