@@ -4,6 +4,8 @@ import LandlordInput from '../components/landlords/LandlordInput'
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
+import { Route } from 'react-router-dom'
+import Landlord from '../components/landlords/Landlord'
 
 const LandlordsContainer = ({ landlords }) => {
 
