@@ -11,9 +11,7 @@ function Landlord({ id, match, landlords, deleteLandlord, properties }) {
 
   const [ toggleEdit, setToggleEdit ] = useState(false)
 
-  const { id, 
-          name,
-          rating } = landlord
+  const landlord = id ? landlords[id] : landlords[match.params.landlordId]
 
   const handleEditClick = () => {
     setToggleEdit(!toggleEdit)
