@@ -59,10 +59,10 @@ function Landlord({ id, match, landlords, deleteLandlord, properties }) {
           <Link to={`/landlords/${id}`}> <h2 className="text-right">{name}</h2></Link>
           <h3 className="text-right">Rating: {rating}</h3>
         </Col>
-          {toggleEdit && <Col sm={4}><LandlordEditForm name={name} id={id} setToggleEdit={setToggleEdit} /></Col>}
+          {toggleEdit && <Col sm={4}><LandlordEditForm name={name} id={landlord.id} setToggleEdit={setToggleEdit} /></Col>}
         <Col>
           <Button className="mr-2" variant="outline-secondary" onClick={handleEditClick} >Edit Landlord</Button>
-          <Button variant="outline-danger" onClick={() => deleteLandlord(id)}>Delete Landlord</Button>
+          <Button variant="outline-danger" onClick={() => deleteLandlord(landlord.id)}>Delete Landlord</Button>
         </Col>
       </Row>
       <hr />
