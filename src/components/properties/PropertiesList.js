@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import PropertyInput from './PropertyInput'
+import { createProperty } from '../../actions/properties.actions'
+import { createLandlord } from '../../actions/landlords.actions'
 
-const PropertiesList = ({ properties, landlords }) => {
+const PropertiesList = ({ properties, landlords, createProperty, createLandlord }) => {
+
+  const [ showPropertyInput, setShowPropertyInput ] = useState(false)
+
+  const handleClick = () => {
+    toggleShowPropertyInput()
+  }
+
+  const toggleShowPropertyInput = () => {
+    setShowPropertyInput(!showPropertyInput)
+  }
 
   const reviewButton = property => {
     const buttonText = property.reviews.length === 0 ? 'Leave a Review' : "Read the Reviews"
@@ -42,12 +56,29 @@ const PropertiesList = ({ properties, landlords }) => {
   }
 
   return(
-    <Row>
-      <Col sm={{span: 10, offset: 1}}>
-        {generatePropertiesList()}
-      </Col>
-    </Row>
+    <Container>
+      <Row>
+        <Col>
+          {showPropertyInput 
+            &&        
+          <PropertyInput 
+            createProperty={createProperty} 
+            landlords={landlords} 
+            createLandlord={createLandlord}
+            toggleShowPropertyInput={toggleShowPropertyInput}
+          />}
+          {showPropertyInput || <Button variant="secondary" onClick={handleClick}>Add Property</Button>}
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={{span: 10, offset: 1}}>
+          {generatePropertiesList()}
+        </Col>
+      </Row>
+    </Container>
+
   )
 }
 
-export default PropertiesList
+
+export default connect(null, { createProperty, createLandlord })(PropertiesList)
