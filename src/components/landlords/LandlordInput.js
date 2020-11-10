@@ -31,6 +31,7 @@ const LandlordInput = ({ createLandlord, toggleLandlordInput }) => {
           name="name"
           value={name}
           onChange={handleChange}
+          required
         />
       </Form.Group>
       <Button variant="secondary" type="submit">Create Landlord</Button>

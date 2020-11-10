@@ -23,6 +23,7 @@ const LandlordEditForm = ({ name: landlordName, setToggleEdit, updateLandlord, i
         value={name}
         onChange={e => setName(e.target.value)}
         name="name"
+        required
       />
     </Form.Group>
       <Button variant="secondary" type="submit">Save</Button>
