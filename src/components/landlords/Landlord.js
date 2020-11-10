@@ -25,7 +25,7 @@ function Landlord({ id, match, landlords, properties }) {
       return (
         <Row className="my-4" key={property.id}>
           <Col sm={2}>
-            <img src="/15-512.png" alt="" width="100%" />
+            <img src={property.imageUrl || '/15-512.png'} alt="" width="100%" />
           </Col>
           <Col sm={10}>
             {generatePropertyLink(property)}
