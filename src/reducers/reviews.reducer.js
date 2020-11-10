@@ -15,7 +15,9 @@ export default function reviewsReducer(
           newObj[eleObj.id] = {
             id: eleObj.id,
             content: eleObj.attributes.content,
-            rating: eleObj.attributes.rating
+            rating: eleObj.attributes.rating,
+            propertyId: eleObj.attributes.property_id,
+            address: eleObj.attributes.address
           }
           return newObj
         }, {})
@@ -27,7 +29,9 @@ export default function reviewsReducer(
       let newReview = {
         id: review.id,
         content: review.attributes.content,
-        rating: review.attributes.rating
+        rating: review.attributes.rating,
+        propertyId: review.attributes.property_id,
+        address: review.attributes.address
       }
 
       stateCopy = Object.assign({}, state)
