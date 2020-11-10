@@ -31,6 +31,12 @@ const Property = ({ match, properties, landlords }) => {
 
   const toggleShowReviewInput = () => setShowReviewInput(!showReviewInput)
 
+  const generateImage = () => {
+    const url = property.hasImage ? property.imageUrl : "/house-placeholder.png"
+
+    return <img className="rounded-lg" src={url} width="100%" alt="" />
+  }
+
   const generateProperty = () => {
    return (
     <React.Fragment>
@@ -42,7 +48,7 @@ const Property = ({ match, properties, landlords }) => {
       </Row>
       <Row>
         <Col sm={8}> {/*Property Photo Column*/}
-          <img className="rounded-lg" src="https://www.dan-foley.com/wp-content/uploads/2019/03/tigue_triangle.jpg" width="100%" alt="" />
+          {generateImage()}
         </Col> {/*Property Photo Column*/}
         <Col sm={4} className="bg-light text-center rounded-lg border" > {/*Landlord Meta Column*/}
 
