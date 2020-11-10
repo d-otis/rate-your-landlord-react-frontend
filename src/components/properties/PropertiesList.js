@@ -18,6 +18,7 @@ const PropertiesList = ({ properties, landlords }) => {
           <Card.Header as="h3"> {properties[id].address} </Card.Header>
           <Card.Body>
             <Link to={`landlords/${landlord?.id}`}><Card.Title>Landlord: {landlord?.name}</Card.Title></Link>
+            <Card.Text as="h6">Rating: {properties[id].rating}</Card.Text>
             <Card.Text>This property has {properties[id].reviews.length} reviews.</Card.Text>
             {reviewButton(properties[id])}
           </Card.Body>
