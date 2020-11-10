@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 const ReviewsList = ({ property, reviews, isPropertyShow }) => {
 
-  const propertyReviewIds = property.reviews.map(review => review.id) || properties
+  const propertyReviewIds = property?.reviews.map(review => review.id) || Object.keys(reviews)
 
   return(
     <Container className="mt-5">
