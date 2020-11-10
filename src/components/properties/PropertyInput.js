@@ -10,6 +10,7 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
   const [ landlordId, setLandlordId ] = useState('choose')
   const [ showNewLandlordInput, setShowNewLandlordInput ] = useState(false)
   const [ landlordName, setLandlordName ] = useState('')
+  const [ imageUrl, setImageUrl ] = useState('')
 
   const handleAddressChange = e => {
     setAddress(e.target.value)
@@ -23,6 +24,10 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
       setShowNewLandlordInput(true)
       setLandlordId(e.target.value)
     }
+  }
+
+  const handleImageUrlChange = e => {
+    setImageUrl(e.target.value)
   }
 
   const generateLandlordSelect = () => {
@@ -98,6 +103,17 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
           </Form.Control>
         </Form.Group>
         {showNewLandlordInput && renderLandlordInput()}
+        <Form.Group>
+          <Form.Label>Image URL:</Form.Label>
+          <Form.Control 
+            type="text"
+            name="imageUrl"
+            id="image"
+            placeholder="Paste an image link here"
+            onChange={handleImageUrlChange}
+            value={imageUrl}
+          />
+        </Form.Group>
         <br />
         <Button variant="secondary" type="submit">Create Property</Button>
         <Button variant="secondary" className="ml-2" onClick={toggleShowPropertyInput}>Cancel</Button>
