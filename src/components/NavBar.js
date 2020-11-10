@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
 
   return (
-    <Navbar bg="light" expand="md" className="mb-4">
+    <Navbar bg="light" expand="md" className="mb-4 shadow-sm">
       <Navbar.Brand>Rate Your Landlord</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
