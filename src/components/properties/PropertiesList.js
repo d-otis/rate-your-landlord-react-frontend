@@ -23,7 +23,7 @@ const PropertiesList = ({ properties, landlords }) => {
           <Container>
             <Row>
               <Col sm={4}>
-                <img src={properties[id].imageUrl || '/15-512.png'} className="w-100" />
+                <img src={properties[id].imageUrl || '/15-512.png'} className="w-100" alt="" />
               </Col>
               <Col>            
                 <Link to={`landlords/${landlord?.id}`}><Card.Title>Landlord: {landlord?.name}</Card.Title></Link>
