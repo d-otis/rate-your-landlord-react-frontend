@@ -3,13 +3,13 @@ import Container from 'react-bootstrap/Container'
 import Review from './Review'
 import { connect } from 'react-redux'
 
-const ReviewsList = ({ properties, property, reviews }) => {
+const ReviewsList = ({ properties, property, reviews, isPropertyShow }) => {
 
   const propertyReviewIds = property.reviews.map(review => review.id) || properties
 
   return(
     <Container className="mt-5">
-      {propertyReviewIds.map(id => <Review key={id} review={reviews[id]} />)}
+      {propertyReviewIds.map(id => <Review key={id} review={reviews[id]} isPropertyShow={isPropertyShow} />)}
     </Container>
   )
 }
