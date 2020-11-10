@@ -26,7 +26,7 @@ const Property = ({ match, properties, landlords }) => {
   }
 
   const generateLandlordLink = landlordId => {
-    return <Link to={`/landlords/${landlordId}`}><h3>{getLandlordName(landlordId)}</h3></Link>
+    return <Link to={`/landlords/${landlordId}`}><h3 className="mb-0">{getLandlordName(landlordId)}</h3></Link>
   }
 
   const toggleShowReviewInput = () => setShowReviewInput(!showReviewInput)
@@ -57,7 +57,7 @@ const Property = ({ match, properties, landlords }) => {
               <Col>{/*Landlord Name Column*/}
 
                 {generateLandlordLink(property.landlordId)}
-
+                <small>landlord</small>
               </Col>{/*Landlord Name Column*/}
             </Row> {/*Landlord Meta Inner Row*/}
 
@@ -72,7 +72,7 @@ const Property = ({ match, properties, landlords }) => {
 
                 <h1><span className="bg-secondary text-white rounded-lg p-2">{property.rating}</span></h1>
 
-                <small><em>Property rating</em></small>
+                <small><em>property rating</em></small>
               </Col> {/*Property Rating Column*/}
             </Row> {/*Rating Row*/}
 
