@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Landlord from './Landlord'
 import { connect } from 'react-redux'
+import Button from 'react-bootstrap/Button'
+import LandlordInput from './LandlordInput'
 
 const LandlordsList = ({ landlords, updateLandlord, deleteLandlord, properties }) => {
+
+  const [ showLandlordInput, setShowLandlordInput ] = useState(false)
+
+  const toggleLandlordInput = () => {
+    setShowLandlordInput(!showLandlordInput)
+  }
 
   const generateLandlordsList = () => {
     return (
@@ -21,6 +29,9 @@ const LandlordsList = ({ landlords, updateLandlord, deleteLandlord, properties }
 
   return (
     <React.Fragment>
+      {showLandlordInput || <Button variant="secondary" onClick={toggleLandlordInput} className="mb-3">Add a Landlord</Button>}
+      {showLandlordInput && <LandlordInput toggleLandlordInput={toggleLandlordInput} />}
+     
       {generateLandlordsList()}
     </React.Fragment>
   )
