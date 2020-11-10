@@ -17,7 +17,7 @@ export function createProperty(property) {
       "Accept": "application/json",
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({property: {address: property.address, landlord_id: property.landlordId} })
+    body: JSON.stringify({property: {address: property.address, image_url: property.imageUrl ,landlord_id: property.landlordId} })
   }
 
   return dispatch => {
