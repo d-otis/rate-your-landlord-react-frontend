@@ -53,9 +53,9 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
     // createProperty({address: address, landlordId: landlordId})
 
     if (showNewLandlordInput) {
-      createLandlord({name: landlordName, properties_attributes: [{address: address}]})
+      createLandlord({name: landlordName, properties_attributes: [{address: address, image_url: imageUrl}]})
     } else {
-      createProperty({address: address, landlordId: landlordId})
+      createProperty({address: address, landlordId: landlordId, imageUrl: imageUrl})
     }
 
     // below should happen no matter what
