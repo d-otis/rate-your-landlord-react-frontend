@@ -3,10 +3,9 @@ import Container from 'react-bootstrap/Container'
 import Review from './Review'
 import { connect } from 'react-redux'
 
-const ReviewsList = ({ property, reviews }) => {
+const ReviewsList = ({ properties, property, reviews }) => {
 
-  const propertyReviewIds = property.reviews.map(review => review.id)
-
+  const propertyReviewIds = property.reviews.map(review => review.id) || properties
 
   return(
     <Container className="mt-5">
@@ -17,7 +16,8 @@ const ReviewsList = ({ property, reviews }) => {
 
 const mapStateToProps = state => {
   return {
-    reviews: state.reviews
+    reviews: state.reviews,
+    properties: state.properties
   }
 }
 
