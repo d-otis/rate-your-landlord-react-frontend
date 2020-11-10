@@ -9,6 +9,7 @@ import PropertiesContainer from './containers/PropertiesContainer'
 import { fetchLandlords } from './actions/landlords.actions'
 import { fetchProperties } from './actions/properties.actions'
 import { fetchReviews } from './actions/reviews.actions'
+import Home from './components/Home'
 
 class App extends Component {
 
@@ -22,6 +23,7 @@ class App extends Component {
     return (
       <Router>
           <NavBar />
+          <Route exact path="/" render={routerProps => <Home {...routerProps} />} />
           <Route path='/landlords' render={routerProps => <LandlordsContainer {...routerProps} />} />
           <Route path='/properties' render={routerProps => <PropertiesContainer {...routerProps} />} />
       </Router>
