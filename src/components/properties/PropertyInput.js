@@ -69,6 +69,7 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
           placeholder="Enter landlord's name" 
           onChange={handleLandlordNameChange} 
           value={landlordName}
+          required
         />
       </Form.Group>
       </React.Fragment>
@@ -86,6 +87,7 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
             placeholder="type address here"
             value={address}
             onChange={handleAddressChange}
+            required
           />
         </Form.Group>
         <Form.Group>
@@ -106,6 +108,7 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
             placeholder="Paste an image link here"
             onChange={handleImageUrlChange}
             value={imageUrl}
+            required
           />
         </Form.Group>
         <br />
