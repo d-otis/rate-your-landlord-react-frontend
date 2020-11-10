@@ -15,6 +15,7 @@ const NavBar = () => {
           <NavLink tag={Link} to="/">Home</NavLink>
           <NavLink tag={Link} to="/properties">Properties</NavLink>
           <NavLink tag={Link} to="/landlords">Landlords</NavLink>
+          <NavLink tag={Link} to="/reviews">Reviews</NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
