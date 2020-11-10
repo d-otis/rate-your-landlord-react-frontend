@@ -54,7 +54,7 @@ function Landlord({ id, match, landlords, properties }) {
       </Row>
       <Row className="mb-5">
         <Col sm={4} className="pr-4">
-          <Link to={`/landlords/${id}`}> <h2 className="text-right">{name}</h2></Link>
+          <Link to={`/landlords/${landlord.id}`}> <h2 className="text-right">{name}</h2></Link>
           <h3 className="text-right">Rating: {rating}</h3>
         </Col>
           {toggleEdit && <Col sm={4}><LandlordEditForm name={name} id={landlord.id} setToggleEdit={setToggleEdit} /></Col>}
