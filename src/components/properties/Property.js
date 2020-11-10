@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { Link } from 'react-router-dom'
 
 const Property = ({ match, properties, landlords }) => {
 
@@ -22,6 +23,10 @@ const Property = ({ match, properties, landlords }) => {
   const getLandlordRating = id => {
     const landlord = landlords[id]
     return landlord?.rating
+  }
+
+  const generateLandlordLink = landlordId => {
+    return <Link to={`/landlords/${landlordId}`}><h3>{getLandlordName(landlordId)}</h3></Link>
   }
 
   const toggleShowReviewInput = () => setShowReviewInput(!showReviewInput)
@@ -45,7 +50,7 @@ const Property = ({ match, properties, landlords }) => {
             <Row className="my-5" > {/*Landlord Meta Inner Row*/}
               <Col>{/*Landlord Name Column*/}
 
-                <h3>{getLandlordName(property.landlordId)}</h3>
+                {generateLandlordLink(property.landlordId)}
 
               </Col>{/*Landlord Name Column*/}
             </Row> {/*Landlord Meta Inner Row*/}
