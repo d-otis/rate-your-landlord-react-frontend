@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { connect } from 'react-redux'
 import { fetchProperties } from '../../actions/properties.actions'
+import { Formik } from 'formik'
+import * as Yup from 'yup'
 
 const PropertyInput = ({ createProperty, landlords, createLandlord, fetchProperties, toggleShowPropertyInput }) => {
 
@@ -81,43 +83,127 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
     )
   }
 
-  return(
-      <Form onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label>Address: </Form.Label>
-          <Form.Control 
-            type="text"
-            name="address"
-            id="address"
-            placeholder="type address here"
-            value={address}
-            onChange={handleAddressChange}
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Choose a Landlord: </Form.Label>
-          <Form.Control as="select" name="" id="landlord" onChange={handleLandlordChange} value={landlordId} >
-            <option value="choose">Select:</option>
-              {generateLandlordSelect()}
-            <option value="new">Create a New Landlord</option>
-          </Form.Control>
-        </Form.Group>
-        {showNewLandlordInput && renderLandlordInput()}
-        <Form.Group>
-          <Form.Label>Image URL:</Form.Label>
-          <Form.Control 
-            type="text"
-            name="imageUrl"
-            id="image"
-            placeholder="Paste an image link here"
-            onChange={handleImageUrlChange}
-            value={imageUrl}
-          />
-        </Form.Group>
-        <br />
-        <Button variant="secondary" type="submit">Create Property</Button>
-        <Button variant="secondary" className="ml-2" onClick={toggleShowPropertyInput}>Cancel</Button>
-      </Form>
+  // return(
+  //     <Form onSubmit={handleSubmit}>
+  //       <Form.Group>
+  //         <Form.Label>Address: </Form.Label>
+  //         <Form.Control 
+  //           type="text"
+  //           name="address"
+  //           id="address"
+  //           placeholder="type address here"
+  //           value={address}
+  //           onChange={handleAddressChange}
+  //         />
+  //       </Form.Group>
+  //       <Form.Group>
+  //         <Form.Label>Choose a Landlord: </Form.Label>
+  //         <Form.Control as="select" name="" id="landlord" onChange={handleLandlordChange} value={landlordId} >
+  //           <option value="choose">Select:</option>
+  //             {generateLandlordSelect()}
+  //           <option value="new">Create a New Landlord</option>
+  //         </Form.Control>
+  //       </Form.Group>
+  //       {showNewLandlordInput && renderLandlordInput()}
+  //       <Form.Group>
+  //         <Form.Label>Image URL:</Form.Label>
+  //         <Form.Control 
+  //           type="text"
+  //           name="imageUrl"
+  //           id="image"
+  //           placeholder="Paste an image link here"
+  //           onChange={handleImageUrlChange}
+  //           value={imageUrl}
+  //         />
+  //       </Form.Group>
+  //       <br />
+  //       <Button variant="secondary" type="submit">Create Property</Button>
+  //       <Button variant="secondary" className="ml-2" onClick={toggleShowPropertyInput}>Cancel</Button>
+  //     </Form>
+  // )
+
+  const DisplayFormikState = props =>
+    <div style={{ margin: '1rem 0' }}>
+      <h3 style={{ fontFamily: 'monospace' }} />
+      <pre
+        style={{
+          background: '#f6f8fa',
+          fontSize: '.65rem',
+          padding: '.5rem',
+        }}
+      >
+        <strong>props</strong> ={' '}
+        {JSON.stringify(props, null, 2)}
+      </pre>
+    </div>;
+  
+  return (
+    <div>
+    <Formik
+          initialValues={{ email: "" }}
+          onSubmit={async values => {
+            await new Promise(resolve => setTimeout(resolve, 500));
+            alert(JSON.stringify(values, null, 2));
+          }}
+          validationSchema={Yup.object().shape({
+            email: Yup.string()
+              .email()
+              .required("Required")
+          })}
+        >
+          {props => {
+            const {
+              values,
+              touched,
+              errors,
+              dirty,
+              isSubmitting,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              handleReset
+            } = props;
+            return (
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="email" style={{ display: "block" }}>
+                  Email
+                </label>
+                <input
+                  id="email"
+                  placeholder="Enter your email"
+                  type="text"
+                  value={values.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.email && touched.email
+                      ? "text-input error"
+                      : "text-input"
+                  }
+                />
+                {errors.email && touched.email && (
+                  <div className="input-feedback">{errors.email}</div>
+                )}
+
+                <button
+                  type="button"
+                  className="outline"
+                  onClick={handleReset}
+                  disabled={!dirty || isSubmitting}
+                >
+                  Reset
+                </button>
+                <button type="submit" disabled={isSubmitting}>
+                  Submit
+                </button>
+
+                <DisplayFormikState {...props} />
+              </form>
+            );
+          }}
+        </Formik>
+    </div>
+    
   )
 }
 
