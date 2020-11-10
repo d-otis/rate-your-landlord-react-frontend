@@ -16,6 +16,10 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
     setAddress(e.target.value)
   }
 
+  const handleLandlordNameChange = e => {
+    setLandlordName(e.target.value)
+  }
+
   const handleLandlordChange = e => {
     if (e.target.value !== "new") {
       setShowNewLandlordInput(false)
@@ -75,10 +79,6 @@ const PropertyInput = ({ createProperty, landlords, createLandlord, fetchPropert
       </Form.Group>
       </React.Fragment>
     )
-  }
-
-  const handleLandlordNameChange = e => {
-    setLandlordName(e.target.value)
   }
 
   return(
