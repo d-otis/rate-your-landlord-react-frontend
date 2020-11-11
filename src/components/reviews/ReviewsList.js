@@ -8,7 +8,13 @@ const ReviewsList = ({ property, reviews, isPropertyShow }) => {
 
   const propertyReviewIds = property?.reviews.map(review => review.id) || Object.keys(reviews)
 
-  const [ filterSelection, setFilterSelection ] = useState(null)
+  const [ filterSelection, setFilterSelection ] = useState(0)
+
+  const filterReviewIds = () => {
+    return filterSelection === 0 ? propertyReviewIds : propertyReviewIds.filter(id => reviews[id].rating === filterSelection)
+  }
+
+  
 
   return(
     <Container className="mt-5">
