@@ -14,8 +14,6 @@ const ReviewsList = ({ property, reviews, isPropertyShow }) => {
     return filterSelection === 0 ? propertyReviewIds : propertyReviewIds.filter(id => reviews[id].rating === filterSelection)
   }
 
-  
-
   return(
     <Container className="mt-5">
     <FilterComponent setFilterSelection={setFilterSelection} filterSelection={filterSelection} />
