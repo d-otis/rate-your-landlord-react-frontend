@@ -11,7 +11,8 @@ const FilterComponent = ({ setFilterSelection, filterSelection }) => {
     <Form>
     <Form.Group>
     <Form.Label>Filter by rating:</Form.Label>
-      <Form.Control as="select" name="" id="" onChange={handleChange}>
+      <Form.Control as="select" name="" id="" onChange={handleChange} value={filterSelection}>
+      <option value="0">--</option>
         <option value="5">5 Stars</option>
         <option value="4">4 Stars</option>
         <option value="3">3 Stars</option>
