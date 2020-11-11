@@ -1,7 +1,7 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
 
-const FilterComponent = ({ setFilterSelection }) => {
+const FilterComponent = ({ setFilterSelection, filterSelection }) => {
 
   const handleChange = e => {
     setFilterSelection(e.target.value)
