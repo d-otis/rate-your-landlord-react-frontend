@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import FilterComponent from './FilterComponent'
 
 const ReviewsList = ({ property, reviews, isPropertyShow }) => {
-
+  // debugger
   const propertyReviewIds = property?.reviews.map(review => review.id) || Object.keys(reviews)
 
   const [ filterSelection, setFilterSelection ] = useState(0)
@@ -16,8 +16,11 @@ const ReviewsList = ({ property, reviews, isPropertyShow }) => {
 
   return(
     <Container className="mt-5">
-    <FilterComponent setFilterSelection={setFilterSelection} filterSelection={filterSelection} />
+
+      {isPropertyShow || <FilterComponent setFilterSelection={setFilterSelection} filterSelection={filterSelection} />}
+
       {filterReviewIds().map(id => <Review key={id} review={reviews[id]} isPropertyShow={isPropertyShow} />)}
+
     </Container>
   )
 }
