@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Review from './Review'
 import { connect } from 'react-redux'
 import FilterComponent from './FilterComponent'
+import SortingComponent from './SortingComponent'
 
 const ReviewsList = ({ property, reviews, isPropertyShow }) => {
   // debugger
@@ -18,7 +19,11 @@ const ReviewsList = ({ property, reviews, isPropertyShow }) => {
   return(
     <Container className="mt-5">
 
-      {isPropertyShow || <FilterComponent setFilterSelection={setFilterSelection} filterSelection={filterSelection} />}
+      <Row>
+        {isPropertyShow || <FilterComponent setFilterSelection={setFilterSelection} filterSelection={filterSelection} />}
+
+        <SortingComponent />
+      </Row>
 
       {filterReviewIds().map(id => <Review key={id} review={reviews[id]} isPropertyShow={isPropertyShow} />)}
 
