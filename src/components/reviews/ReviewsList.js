@@ -11,6 +11,7 @@ const ReviewsList = ({ property, reviews, isPropertyShow }) => {
   const propertyReviewIds = property?.reviews.map(review => review.id) || Object.keys(reviews)
 
   const [ filterSelection, setFilterSelection ] = useState(0)
+  const [ sortBy, setSortBy ] = useState('none')
 
   const filterReviewIds = () => {
     return filterSelection === 0 ? propertyReviewIds : propertyReviewIds.filter(id => reviews[id].rating === filterSelection)
@@ -22,7 +23,7 @@ const ReviewsList = ({ property, reviews, isPropertyShow }) => {
       <Row>
         {isPropertyShow || <FilterComponent setFilterSelection={setFilterSelection} filterSelection={filterSelection} />}
 
-        <SortingComponent />
+        <SortingComponent sortBy={sortBy} setSortBy={setSortBy}  />
       </Row>
 
       {filterReviewIds().map(id => <Review key={id} review={reviews[id]} isPropertyShow={isPropertyShow} />)}
