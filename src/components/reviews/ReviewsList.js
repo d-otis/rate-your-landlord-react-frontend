@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Review from './Review'
 import { connect } from 'react-redux'
+import FilterComponent from './FilterComponent'
 
 const ReviewsList = ({ property, reviews, isPropertyShow }) => {
 
