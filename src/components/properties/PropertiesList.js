@@ -23,6 +23,7 @@ const PropertiesList = ({ properties, landlords, createProperty, createLandlord 
   }
 
   const reviewButton = property => {
+    // Conditional button text below
     const buttonText = property.reviews.length === 0 ? 'Leave a Review' : "Read the Reviews"
     return <Link to={`/properties/${property.id}`}><Button variant="secondary">{buttonText}</Button></Link>
   }
@@ -56,6 +57,7 @@ const PropertiesList = ({ properties, landlords, createProperty, createLandlord 
   }
 
   return(
+
     <Container>
       <Row>
         <Col>
@@ -67,6 +69,7 @@ const PropertiesList = ({ properties, landlords, createProperty, createLandlord 
             createLandlord={createLandlord}
             toggleShowPropertyInput={toggleShowPropertyInput}
           />}
+          {/* Only show button while Input form is absent/false */}
           {showPropertyInput || <Button variant="secondary" onClick={handleClick}>Add Property</Button>}
         </Col>
       </Row>
