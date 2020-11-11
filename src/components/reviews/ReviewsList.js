@@ -14,7 +14,14 @@ const ReviewsList = ({ property, reviews, isPropertyShow }) => {
   const [ sortBy, setSortBy ] = useState('none')
 
   const filterReviewIds = () => {
-    return filterSelection === 0 ? propertyReviewIds : propertyReviewIds.filter(id => reviews[id].rating === filterSelection)
+    if (sortBy === 'none') {
+      return filterSelection === 0 ? propertyReviewIds : propertyReviewIds.filter(id => reviews[id].rating === filterSelection)
+    } else {
+      console.log('Please sort by: ', sortBy)
+      // property
+      return propertyReviewIds
+      // return reviewIds ordered by:
+    }
   }
 
   return(
