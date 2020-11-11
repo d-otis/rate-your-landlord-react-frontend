@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 const FilterComponent = ({ setFilterSelection, filterSelection }) => {
 
   const handleChange = e => {
-    setFilterSelection(e.target.value)
+    setFilterSelection(Number(e.target.value))
   }
 
   return (
