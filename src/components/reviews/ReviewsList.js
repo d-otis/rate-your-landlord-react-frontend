@@ -29,8 +29,7 @@ const ReviewsList = ({ property, reviews, isPropertyShow }) => {
 
       <Row>
         {isPropertyShow || <FilterComponent setFilterSelection={setFilterSelection} filterSelection={filterSelection} />}
-
-        <SortingComponent sortBy={sortBy} setSortBy={setSortBy}  />
+        {null && <SortingComponent sortBy={sortBy} setSortBy={setSortBy}  />}
       </Row>
 
       {filterReviewIds().map(id => <Review key={id} review={reviews[id]} isPropertyShow={isPropertyShow} />)}
