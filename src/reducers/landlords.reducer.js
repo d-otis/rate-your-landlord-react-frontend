@@ -24,7 +24,8 @@ export default function landlordsReducer(
             name: eleObj.attributes.name,
             rating: formatRating(eleObj.attributes.rating),
             reviews: eleObj.relationships.reviews.data,
-            properties: eleObj.relationships.properties.data
+            properties: eleObj.relationships.properties.data,
+            imageUrl: eleObj.attributes.image_url
           }
           return newObj
         }, {})
@@ -39,7 +40,8 @@ export default function landlordsReducer(
         name: landlord.attributes.name, 
         reviews: landlord.relationships.reviews.data, 
         properties: landlord.relationships.properties.data,
-        rating: formatRating(landlord.attributes.rating)
+        rating: formatRating(landlord.attributes.rating),
+        imageUrl: landlord.attributes.image_url
       }
 
       stateCopy = Object.assign({}, state)
@@ -56,7 +58,8 @@ export default function landlordsReducer(
       name: landlord.attributes.name, 
       reviews: landlord.relationships.reviews.data, 
       properties: landlord.relationships.properties.data,
-      rating: formatRating(landlord.attributes.rating)
+      rating: formatRating(landlord.attributes.rating),
+      imageUrl: landlord.attributes.image_url
     }
 
       stateCopy = Object.assign({}, state)
