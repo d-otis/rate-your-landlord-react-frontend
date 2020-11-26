@@ -43,7 +43,7 @@ function Landlord({ id, match, landlords, properties }) {
     <Container>
       <Row className="mb-3">
         <Col sm={4}>
-          <img src="/user_placeholder.png" alt="" width="100%" className="rounded-circle" />
+          <img src={landlord.imageUrl || "/user_placeholder.png"} alt="" width="100%" className="rounded-circle" />
           {/*<Link to={`/landlords/${id}`}> <h2>{name}</h2></Link>*/}
         </Col>
         <Col sm={8} className="border rounded-lg bg-light p-2">
