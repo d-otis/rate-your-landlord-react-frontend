@@ -43,7 +43,6 @@ export default function landlordsReducer(
         rating: formatRating(landlord.attributes.rating),
         imageUrl: landlord.attributes.image_url
       }
-      debugger
       stateCopy = Object.assign({}, state)
       stateCopy[newLandlord.id] = newLandlord
       
