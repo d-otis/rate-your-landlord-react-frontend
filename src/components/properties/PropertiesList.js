@@ -29,35 +29,32 @@ const PropertiesList = ({ properties, landlords, createProperty, createLandlord 
   }
 
   const generatePropertiesList = () => {
-    if (Object.keys(properties).length > 1) {
-      const propertyKeys = Object.keys(properties).filter(el => el !== 'loading')
-      return propertyKeys.map(id=> {
-        const landlord = landlords[properties[id].landlordId]
-        return (
-          <Card key={id} className="my-4">
-            <Card.Header as="h3"> {properties[id].address} </Card.Header>
-            {console.log(properties[id])}
-            <Card.Body>
-            <Container>
-              <Row>
-                <Col sm={4}>
-                  <img src={properties[id].imageUrl || '/15-512.png'} className="w-100" alt="" />
-                </Col>
-                <Col>            
-                  <Link to={`landlords/${landlord?.id}`}><Card.Title>Landlord: {landlord?.name}</Card.Title></Link>
-                  <Card.Text as="h6">Landlord Rating: {landlord?.rating}</Card.Text>
-                  <Card.Text as="h6">Property Rating: {properties[id].rating}</Card.Text>
-                  <Card.Text>This property has {properties[id].reviews.length} reviews.</Card.Text>
-                  {reviewButton(properties[id])}
-                </Col>
-              </Row>
-            </Container>
+    const propertyKeys = Object.keys(properties).filter(el => el !== 'loading')
+    return propertyKeys.map(id=> {
+      const landlord = landlords[properties[id].landlordId]
+      return (
+        <Card key={id} className="my-4">
+          <Card.Header as="h3"> {properties[id].address} </Card.Header>
+          <Card.Body>
+          <Container>
+            <Row>
+              <Col sm={4}>
+                <img src={properties[id].imageUrl || '/15-512.png'} className="w-100" alt="" />
+              </Col>
+              <Col>            
+                <Link to={`landlords/${landlord?.id}`}><Card.Title>Landlord: {landlord?.name}</Card.Title></Link>
+                <Card.Text as="h6">Landlord Rating: {landlord?.rating}</Card.Text>
+                <Card.Text as="h6">Property Rating: {properties[id].rating}</Card.Text>
+                <Card.Text>This property has {properties[id].reviews.length} reviews.</Card.Text>
+                {reviewButton(properties[id])}
+              </Col>
+            </Row>
+          </Container>
 
-            </Card.Body>
-          </Card>
-        )
-      })
-    }
+          </Card.Body>
+        </Card>
+      )
+    })
   }
 
   return(
