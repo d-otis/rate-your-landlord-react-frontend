@@ -29,7 +29,14 @@ function Landlord({ id, match, landlords, properties }) {
       return (
         <Row className="my-4" key={property.id}>
           <Col sm={2}>
-            <img src={property.imageUrl || '/15-512.png'} alt="" width="100%" />
+            <ReactImageAppear 
+              src={property.imageUrl || '/15-512.png'} 
+              placeholder="/spinner2.gif"
+              className="w-100" 
+              animation="blurIn" 
+              animationDuration="1s" 
+              easing="ease-out"
+            />
           </Col>
           <Col sm={10}>
             {generatePropertyLink(property)}
