@@ -2,7 +2,7 @@ import { formatRating } from '../utils/misc.util'
 
 export default function landlordsReducer(
   // REFACTOR: so that state is an object and memoized using landlord ids
-  state = {},
+  state = { loading: true },
   action
 ) {
   let landlord
