@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import FilterComponent from './FilterComponent'
 import SortingComponent from './SortingComponent'
 
-const ReviewsList = ({ property, reviews, isPropertyShow }) => {
+const ReviewsList = ({ property, reviews, isPropertyShow, loading }) => {
   // debugger
   const propertyReviewIds = property?.reviews.map(review => review.id) || Object.keys(reviews).filter(el => el !== 'loading')
 
@@ -40,7 +40,8 @@ const ReviewsList = ({ property, reviews, isPropertyShow }) => {
 
 const mapStateToProps = state => {
   return {
-    reviews: state.reviews
+    reviews: state.reviews,
+    loading: state.reviews.loading
   }
 }
 
