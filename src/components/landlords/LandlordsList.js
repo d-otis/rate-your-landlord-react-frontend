@@ -13,8 +13,9 @@ const LandlordsList = ({ landlords, updateLandlord, deleteLandlord, properties }
   }
 
   const generateLandlordsList = () => {
+    const landlordsKeys = Object.keys(landlords).filter(el => el !== 'loading')
     return (
-      Object.keys(landlords).map(id => {
+      landlordsKeys.map(id => {
         return (
           <Landlord 
             key={id} 
