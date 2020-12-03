@@ -14,6 +14,10 @@ import Home from './components/Home'
 
 class App extends Component {
 
+  state = {
+    loading: true
+  }
+
   componentDidMount() {
     this.props.fetchLandlords()
     this.props.fetchProperties()
@@ -24,6 +28,7 @@ class App extends Component {
     return (
       <Router>
           <NavBar />
+          {this.state.loading ? "We're loading" : "We're not loading."}
           <Route exact path="/" render={routerProps => <Home {...routerProps} />} />
           <Route path='/landlords' render={routerProps => <LandlordsContainer {...routerProps} />} />
           <Route path='/properties' render={routerProps => <PropertiesContainer {...routerProps} />} />
