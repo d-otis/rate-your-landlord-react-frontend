@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Spinner from './spinner/Spinner'
+import ReactImageAppear from 'react-image-appear'
 
 const Home = ({ landlordsLoading, propertiesLoading, reviewsLoading }) => {
 
@@ -27,7 +28,7 @@ const Home = ({ landlordsLoading, propertiesLoading, reviewsLoading }) => {
       <Row className="">
         <Col sm={6}>
           <Card className="text-white bg-dark my-2">
-            <Card.Img src="https://images.unsplash.com/photo-1469022563428-aa04fef9f5a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80" />
+            <ReactImageAppear src="https://images.unsplash.com/photo-1469022563428-aa04fef9f5a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80" loading="/spinner2.gif" className="card-img" />
             <Card.ImgOverlay style={imgOverlayCss}>
               <Card.Title as="h1" className="text-center" style={cardTitleCss}>Browse Properties</Card.Title>
               <Link to="/properties" className="stretched-link"></Link>
@@ -36,7 +37,7 @@ const Home = ({ landlordsLoading, propertiesLoading, reviewsLoading }) => {
         </Col>
         <Col sm={6}>
         <Card className="text-white bg-dark my-2">
-          <Card.Img src="https://images.unsplash.com/photo-1585909695284-32d2985ac9c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" />
+          <ReactImageAppear src="https://images.unsplash.com/photo-1585909695284-32d2985ac9c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" loading="/spinner2.gif" className="card-img" />
           <Card.ImgOverlay style={imgOverlayCss}>
             <Card.Title as="h1" className="text-center" style={cardTitleCss}>Read Reviews</Card.Title>
             <Link to="/reviews" className="stretched-link"></Link>
@@ -47,7 +48,7 @@ const Home = ({ landlordsLoading, propertiesLoading, reviewsLoading }) => {
       <Row>
         <Col sm={{span: 6, offset: 3}}>
           <Card className="text-white bg-dark my-2">
-            <Card.Img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1866&q=80"/>
+            <ReactImageAppear src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1866&q=80" loading="/spinner2.gif" className="card-img" />
             <Card.ImgOverlay style={imgOverlayCss}>
               <Card.Title as="h1" className="text-center" style={cardTitleCss}>Browse Landlords</Card.Title>
               <Link to="/landlords" className="stretched-link"></Link>
