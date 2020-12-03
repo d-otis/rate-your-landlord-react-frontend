@@ -10,6 +10,7 @@ import PropertyInput from './PropertyInput'
 import { createProperty } from '../../actions/properties.actions'
 import { createLandlord } from '../../actions/landlords.actions'
 import Spinner from '../spinner/Spinner'
+import ReactImageAppear from 'react-image-appear'
 
 const PropertiesList = ({ properties, landlords, createProperty, createLandlord }) => {
 
@@ -42,7 +43,13 @@ const PropertiesList = ({ properties, landlords, createProperty, createLandlord 
           <Container>
             <Row>
               <Col sm={4}>
-                <img src={properties[id].imageUrl || '/15-512.png'} className="w-100" alt="" />
+                <ReactImageAppear 
+                  src={properties[id].imageUrl || '/15-512.png'} 
+                  loading="/spinner2.gif" 
+                  className="w-100" 
+                  animation="blurIn" 
+                  easing="ease-out"
+                />
               </Col>
               <Col>            
                 <Link to={`landlords/${landlord?.id}`}><Card.Title>Landlord: {landlord?.name}</Card.Title></Link>

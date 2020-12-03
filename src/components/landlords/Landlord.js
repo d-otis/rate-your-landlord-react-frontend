@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Spinner from '../spinner/Spinner'
+import ReactImageAppear from 'react-image-appear'
 
 function Landlord({ id, match, landlords, properties }) {
 
@@ -49,7 +50,16 @@ function Landlord({ id, match, landlords, properties }) {
       <Container>
         <Row className="mb-3">
           <Col sm={4}>
-            <img src={landlord.imageUrl || "/user_placeholder.png"} alt="" width="100%" className="rounded-circle" />
+            <ReactImageAppear 
+              src={landlord.imageUrl || "/user_placeholder.png"} 
+              loading="/spinner2.gif" 
+              placeholder="/spinner2.gif" 
+              className="rounded-circle w-100" 
+              loaderClass="rounded-circle w-100" 
+              animation="blurIn" 
+              animationDuration="1s" 
+              easing="ease-out"
+            />
             {/*<Link to={`/landlords/${id}`}> <h2>{name}</h2></Link>*/}
           </Col>
           <Col sm={8} className="border rounded-lg bg-light p-2">

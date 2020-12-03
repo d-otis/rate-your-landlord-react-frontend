@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Link } from 'react-router-dom'
+import ReactImageAppear from 'react-image-appear'
 
 const Property = ({ match, properties, landlords }) => {
 
@@ -34,7 +35,14 @@ const Property = ({ match, properties, landlords }) => {
   const generateImage = () => {
     const url = property.hasImage ? property.imageUrl : "/house-placeholder.png"
 
-    return <img className="rounded-lg" src={url} width="100%" alt="" />
+    return <ReactImageAppear 
+            className="rounded-lg w-100" 
+            src={url} 
+            loading="/spinner.gif" 
+            animation="blurIn" 
+            animationDuration="1s" 
+            easing="ease-out"
+          />
   }
 
   const generateProperty = () => {
