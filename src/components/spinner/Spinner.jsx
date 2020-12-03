@@ -13,7 +13,6 @@ const Spinner = () => {
           <h3>Loading</h3>
         </Col>
       </Row>
-
     </Container>
   )
 }
