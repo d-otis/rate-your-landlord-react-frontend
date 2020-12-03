@@ -3,6 +3,7 @@ import Landlord from './Landlord'
 import { connect } from 'react-redux'
 import Button from 'react-bootstrap/Button'
 import LandlordInput from './LandlordInput'
+import Spinner from '../spinner/Spinner'
 
 const LandlordsList = ({ landlords, updateLandlord, deleteLandlord, properties }) => {
 
@@ -33,7 +34,7 @@ const LandlordsList = ({ landlords, updateLandlord, deleteLandlord, properties }
       {showLandlordInput || <Button variant="secondary" onClick={toggleLandlordInput} className="mb-3">Add a Landlord</Button>}
       {showLandlordInput && <LandlordInput toggleLandlordInput={toggleLandlordInput} />}
      
-      {generateLandlordsList()}
+      {loading ? <Spinner /> : generateLandlordsList()}
     </React.Fragment>
   )
 }
