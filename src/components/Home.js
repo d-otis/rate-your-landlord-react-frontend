@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Spinner from './Spinner'
 
-const Home = () => {
+const Home = ({ landlordsLoading, propertiesLoading, reviewsLoading }) => {
 
   const imgOverlayCss = {
     background: 'rgba( 0 ,0, 0, 0.25 )'
@@ -56,8 +56,18 @@ const Home = () => {
   }
 
   return(
-    renderCards()
+    // assetsLoading() || renderCards()
+    // assetsLoading() ? <Spinner /> : renderCards()
+    <Spinner />
   )
 }
 
-export default Home
+const mapStateToProps = state => {
+  return {
+    landlordsLoading: state.landlords.loading,
+    propertiesLoading: state.properties.loading,
+    reviewsLoading: state.reviews.loading
+  }
+}
+
+export default connect(mapStateToProps)(Home)
