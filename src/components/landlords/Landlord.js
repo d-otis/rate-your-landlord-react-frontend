@@ -8,6 +8,8 @@ import Container from 'react-bootstrap/Container'
 
 function Landlord({ id, match, landlords, properties }) {
 
+  const loading = landlords.loading
+
   const [ toggleEdit, setToggleEdit ] = useState(false)
 
   const landlord = id ? landlords[id] : landlords[match.params.landlordId]
