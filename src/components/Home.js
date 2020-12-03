@@ -4,6 +4,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import Spinner from './Spinner'
 
 const Home = () => {
 
