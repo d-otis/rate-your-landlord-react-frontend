@@ -5,6 +5,7 @@ import Review from './Review'
 import { connect } from 'react-redux'
 import FilterComponent from './FilterComponent'
 import SortingComponent from './SortingComponent'
+import Spinner from '../spinner/Spinner'
 
 const ReviewsList = ({ property, reviews, isPropertyShow, loading }) => {
   // debugger
@@ -32,7 +33,7 @@ const ReviewsList = ({ property, reviews, isPropertyShow, loading }) => {
         {null && <SortingComponent sortBy={sortBy} setSortBy={setSortBy}  />}
       </Row>
 
-      {filterReviewIds().map(id => <Review key={id} review={reviews[id]} isPropertyShow={isPropertyShow} />)}
+      {loading ? <Spinner/> : filterReviewIds().map(id => <Review key={id} review={reviews[id]} isPropertyShow={isPropertyShow} />)}
 
     </Container>
   )
