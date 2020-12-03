@@ -15,8 +15,9 @@ const Home = () => {
     marginTop: '27%'
   }
 
-  return(
-    <Container className="mb-5">
+  const renderCards = () => {
+    return (
+      <Container className="mb-5">
       <Row className="">
         <Col sm={6}>
           <Card className="text-white bg-dark my-2">
@@ -49,6 +50,11 @@ const Home = () => {
         </Col>
       </Row>
     </Container>
+    )
+  }
+
+  return(
+    renderCards()
   )
 }
 
