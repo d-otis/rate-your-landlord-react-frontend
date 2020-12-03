@@ -1,7 +1,7 @@
 import { formatRating } from '../utils/misc.util'
 
 export default function propertiesReducer(
-  state = {},
+  state = { loading: true },
   action
 ) {
   let propertyJSON
@@ -26,7 +26,8 @@ export default function propertiesReducer(
             rating: formatRating(eleObj.attributes.rating)
           }
           return newObj
-        }, {})
+        }, {}),
+        loading: false
       }
 
     case "ADD_PROPERTY":

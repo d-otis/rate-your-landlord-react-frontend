@@ -1,5 +1,5 @@
 export default function reviewsReducer(
-  state = {},
+  state = { loading: true },
   action
   ) {
   let stateCopy
@@ -20,7 +20,8 @@ export default function reviewsReducer(
             address: eleObj.attributes.address
           }
           return newObj
-        }, {})
+        }, {}),
+        loading: false
       }
 
     case 'ADD_REVIEW':
