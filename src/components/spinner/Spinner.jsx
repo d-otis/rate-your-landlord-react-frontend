@@ -9,7 +9,7 @@ const Spinner = () => {
     <Container className="text-center">
       <Row>
         <Col>
-          <img src="/spinner.gif"/>
+          <img src="/spinner.gif" />
           <h3>Loading</h3>
         </Col>
       </Row>
