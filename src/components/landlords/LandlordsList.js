@@ -7,6 +7,8 @@ import Spinner from '../spinner/Spinner'
 
 const LandlordsList = ({ landlords, updateLandlord, deleteLandlord, properties }) => {
 
+  const loading = landlords.loading
+
   const [ showLandlordInput, setShowLandlordInput ] = useState(false)
 
   const toggleLandlordInput = () => {
