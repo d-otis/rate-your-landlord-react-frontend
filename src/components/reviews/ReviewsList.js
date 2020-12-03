@@ -8,7 +8,7 @@ import SortingComponent from './SortingComponent'
 
 const ReviewsList = ({ property, reviews, isPropertyShow }) => {
   // debugger
-  const propertyReviewIds = property?.reviews.map(review => review.id) || Object.keys(reviews)
+  const propertyReviewIds = property?.reviews.map(review => review.id) || Object.keys(reviews).filter(el => el !== 'loading')
 
   const [ filterSelection, setFilterSelection ] = useState(0)
   const [ sortBy, setSortBy ] = useState('none')
