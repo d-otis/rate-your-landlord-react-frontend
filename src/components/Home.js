@@ -17,6 +17,10 @@ const Home = ({ landlordsLoading, propertiesLoading, reviewsLoading }) => {
     marginTop: '27%'
   }
 
+  const assetsLoading = () => {
+    return landlordsLoading || propertiesLoading || reviewsLoading
+  }
+
   const renderCards = () => {
     return (
       <Container className="mb-5">
