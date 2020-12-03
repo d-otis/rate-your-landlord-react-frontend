@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col'
 import PropertyInput from './PropertyInput'
 import { createProperty } from '../../actions/properties.actions'
 import { createLandlord } from '../../actions/landlords.actions'
+import Spinner from '../spinner/Spinner'
 
 const PropertiesList = ({ properties, landlords, createProperty, createLandlord }) => {
 
@@ -76,7 +77,7 @@ const PropertiesList = ({ properties, landlords, createProperty, createLandlord 
       </Row>
       <Row>
         <Col sm={{span: 10, offset: 1}}>
-          {generatePropertiesList()}
+          {loading ? <Spinner /> : generatePropertiesList()}
         </Col>
       </Row>
     </Container>
