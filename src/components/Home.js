@@ -60,9 +60,7 @@ const Home = ({ landlordsLoading, propertiesLoading, reviewsLoading }) => {
   }
 
   return(
-    // assetsLoading() || renderCards()
-    // assetsLoading() ? <Spinner /> : renderCards()
-    <Spinner />
+    assetsLoading() ? <Spinner /> : renderCards()
   )
 }
 
