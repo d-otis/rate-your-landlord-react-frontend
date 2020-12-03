@@ -14,15 +14,15 @@ function Landlord({ id, match, landlords, properties }) {
 
   const landlord = id ? landlords[id] : landlords[match.params.landlordId]
 
-  const { name, rating } = landlord
-
-  const myProperties = Object.values(properties).filter(property => property.landlordId === landlord.id)
 
   const handleEditClick = () => {
     setToggleEdit(!toggleEdit)
   }
 
   const generateProperties = () => {
+
+    const myProperties = Object.values(properties).filter(property => property.landlordId === landlord.id)
+
     return myProperties.map(property => {
       return (
         <Row className="my-4" key={property.id}>
@@ -42,6 +42,8 @@ function Landlord({ id, match, landlords, properties }) {
   }
 
   const generateLandlord = () => {
+    const { name, rating } = landlord
+
     return (
       <Container>
         <Row className="mb-3">
