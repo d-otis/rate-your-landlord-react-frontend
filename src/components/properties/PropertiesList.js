@@ -13,6 +13,8 @@ import Spinner from '../spinner/Spinner'
 
 const PropertiesList = ({ properties, landlords, createProperty, createLandlord }) => {
 
+  const loading = properties.loading
+
   const [ showPropertyInput, setShowPropertyInput ] = useState(false)
 
   const handleClick = () => {
