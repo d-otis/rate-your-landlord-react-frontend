@@ -28,7 +28,8 @@ export default function landlordsReducer(
             imageUrl: eleObj.attributes.image_url
           }
           return newObj
-        }, {})
+        }, {}),
+        loading: false
       }
 
     case "ADD_LANDLORD":
