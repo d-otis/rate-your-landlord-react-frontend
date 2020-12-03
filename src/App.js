@@ -14,10 +14,6 @@ import Home from './components/Home'
 
 class App extends Component {
 
-  state = {
-    loading: true
-  }
-
   componentDidMount() {
     this.props.fetchLandlords()
     this.props.fetchProperties()
