@@ -24,7 +24,6 @@ class App extends Component {
     return (
       <Router>
           <NavBar />
-          {this.props.landlordsLoading ? "Loading Landlords" : "Landlords Loaded"}
           <Route exact path="/" render={routerProps => <Home {...routerProps} />} />
           <Route path='/landlords' render={routerProps => <LandlordsContainer {...routerProps} />} />
           <Route path='/properties' render={routerProps => <PropertiesContainer {...routerProps} />} />
@@ -34,10 +33,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    landlordsLoading: state.landlords.loading
-  }
-}
-
-export default connect(mapStateToProps, { fetchLandlords, fetchProperties, fetchReviews })(App);
+export default connect(null, { fetchLandlords, fetchProperties, fetchReviews })(App);
