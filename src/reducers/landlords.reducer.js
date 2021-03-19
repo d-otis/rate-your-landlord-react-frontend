@@ -1,7 +1,6 @@
 import { formatRating } from '../utils/misc.util'
 
 export default function landlordsReducer(
-  // REFACTOR: so that state is an object and memoized using landlord ids
   state = { loading: true },
   action
 ) {
@@ -33,7 +32,6 @@ export default function landlordsReducer(
       }
 
     case "ADD_LANDLORD":
-      // const landlord = action.payload.data
       landlord = action.payload.data
 
       let newLandlord = {
